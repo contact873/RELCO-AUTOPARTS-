@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RELCO International – Auto Parts & Components</title>
+<title>RELCO International – Military Vehicle Parts & Components</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -13,438 +13,209 @@
     --amber: #e8861a;
     --amber2: #f5a030;
     --red: #c0392b;
+    --green: #27ae60;
     --light: #e8edf5;
     --gray: #8a9ab5;
     --card-bg: #111d30;
     --border: rgba(232,134,26,0.2);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior:smooth; }
   body { font-family:'Barlow',sans-serif; background:var(--navy); color:var(--light); overflow-x:hidden; }
 
-  /* ── TOPBAR ── */
-  .topbar {
-    background:#060e1c;
-    padding:8px 40px;
-    display:flex; align-items:center; justify-content:space-between;
-    font-size:13px; color:var(--gray);
-    border-bottom:1px solid rgba(255,255,255,0.05);
-  }
+  /* TOPBAR */
+  .topbar { background:#060e1c; padding:8px 40px; display:flex; align-items:center; justify-content:space-between; font-size:13px; color:var(--gray); border-bottom:1px solid rgba(255,255,255,0.05); }
   .topbar a { color:var(--gray); text-decoration:none; margin-left:18px; }
   .topbar a:hover { color:var(--amber); }
   .topbar .social { display:flex; gap:10px; }
-  .topbar .social a {
-    width:26px; height:26px; border-radius:4px; background:var(--navy3);
-    display:flex; align-items:center; justify-content:center;
-    font-size:12px; font-weight:700; color:var(--gray);
-  }
+  .topbar .social a { width:26px; height:26px; border-radius:4px; background:var(--navy3); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:var(--gray); text-decoration:none; }
   .topbar .social a:hover { background:var(--amber); color:#fff; }
 
-  /* ── NAVBAR ── */
-  .navbar {
-    background:var(--navy);
-    padding:0 40px;
-    display:flex; align-items:center; justify-content:space-between;
-    position:sticky; top:0; z-index:100;
-    border-bottom:2px solid var(--amber);
-    box-shadow:0 4px 30px rgba(0,0,0,0.5);
-  }
-  .logo {
-    display:flex; align-items:center; gap:12px;
-    padding:14px 0;
-    text-decoration:none;
-  }
-  .logo-mark {
-    width:46px; height:46px;
-    background:var(--amber);
-    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-    position:relative;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .logo-inner {
-    width:30px; height:30px;
-    background:var(--navy);
-    clip-path: polygon(50% 15%, 85% 85%, 15% 85%);
-    position:absolute;
-  }
-  .logo-text { line-height:1; }
+  /* NAVBAR */
+  .navbar { background:var(--navy); padding:0 40px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; border-bottom:2px solid var(--amber); box-shadow:0 4px 30px rgba(0,0,0,0.5); }
+  .logo { display:flex; align-items:center; gap:12px; padding:14px 0; text-decoration:none; cursor:pointer; }
+  .logo-mark { width:46px; height:46px; background:var(--amber); clip-path:polygon(50% 0%,100% 100%,0% 100%); position:relative; display:flex; align-items:center; justify-content:center; }
+  .logo-inner { width:30px; height:30px; background:var(--navy); clip-path:polygon(50% 15%,85% 85%,15% 85%); position:absolute; }
   .logo-text .brand { font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:900; color:#fff; letter-spacing:2px; }
   .logo-text .sub { font-size:10px; color:var(--amber); letter-spacing:3px; text-transform:uppercase; font-weight:600; }
   .nav-links { display:flex; gap:0; }
-  .nav-links a {
-    padding:22px 18px;
-    color:var(--light); text-decoration:none;
-    font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase;
-    border-bottom:3px solid transparent;
-    transition:all .2s;
-  }
-  .nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
-  .nav-cta {
-    background:var(--amber); color:var(--navy)!important;
-    padding:10px 22px!important;
-    border-radius:4px; border-bottom:none!important;
-    margin-left:12px;
-  }
+  .nav-links a { padding:22px 16px; color:var(--light); text-decoration:none; font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase; border-bottom:3px solid transparent; transition:all .2s; cursor:pointer; }
+  .nav-links a:hover,.nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+  .nav-cta { background:var(--amber)!important; color:var(--navy)!important; padding:10px 22px!important; border-radius:4px; border-bottom:none!important; margin-left:12px; }
   .nav-cta:hover { background:var(--amber2)!important; }
 
-  /* ── HERO ── */
-  .hero {
-    position:relative; height:580px;
-    background:linear-gradient(135deg, var(--navy) 0%, var(--navy2) 50%, #0d1e38 100%);
-    overflow:hidden;
-    display:flex; align-items:center;
-  }
-  .hero-bg {
-    position:absolute; inset:0;
-    background:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400') center/cover no-repeat;
-    opacity:0.18;
-    filter:saturate(0) brightness(0.6);
-  }
-  .hero-overlay {
-    position:absolute; inset:0;
-    background:linear-gradient(90deg, rgba(10,22,40,0.97) 45%, rgba(10,22,40,0.5) 100%);
-  }
-  .hero-geo {
-    position:absolute; right:-60px; top:50%; transform:translateY(-50%);
-    width:500px; height:500px; border-radius:50%;
-    border:80px solid rgba(232,134,26,0.07);
-    animation:pulse 4s ease-in-out infinite;
-  }
-  .hero-geo2 {
-    position:absolute; right:80px; top:50%; transform:translateY(-50%);
-    width:320px; height:320px; border-radius:50%;
-    border:40px solid rgba(232,134,26,0.05);
-    animation:pulse 4s 1s ease-in-out infinite;
-  }
-  @keyframes pulse { 0%,100%{transform:translateY(-50%) scale(1)} 50%{transform:translateY(-50%) scale(1.04)} }
-  .hero-content {
-    position:relative; z-index:2;
-    padding:0 80px;
-    max-width:680px;
-    animation:fadeUp .8s ease both;
-  }
+  /* HERO */
+  .hero { position:relative; height:600px; overflow:hidden; display:flex; align-items:center; }
+  .hero-bg { position:absolute; inset:0; background-size:cover; background-position:center; filter:saturate(0.3) brightness(0.55); transition:opacity 1s; }
+  .hero-overlay { position:absolute; inset:0; background:linear-gradient(90deg,rgba(10,22,40,0.96) 42%,rgba(10,22,40,0.4) 100%); }
+  .hero-geo { position:absolute; right:-80px; top:50%; transform:translateY(-50%); width:520px; height:520px; border-radius:50%; border:80px solid rgba(232,134,26,0.06); animation:pulse 5s ease-in-out infinite; }
+  .hero-geo2 { position:absolute; right:60px; top:50%; transform:translateY(-50%); width:340px; height:340px; border-radius:50%; border:40px solid rgba(232,134,26,0.04); animation:pulse 5s 1.5s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{transform:translateY(-50%) scale(1)} 50%{transform:translateY(-50%) scale(1.05)} }
+  .hero-content { position:relative; z-index:2; padding:0 80px; max-width:700px; animation:fadeUp .8s ease both; }
   @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-  .hero-tag {
-    display:inline-block;
-    background:var(--amber); color:var(--navy);
-    font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase;
-    padding:5px 14px; border-radius:3px; margin-bottom:20px;
-  }
-  .hero h1 {
-    font-family:'Barlow Condensed',sans-serif;
-    font-size:clamp(38px,5vw,64px); font-weight:900; line-height:1.05;
-    text-transform:uppercase; color:#fff;
-    margin-bottom:20px;
-  }
+  .hero-tag { display:inline-block; background:var(--amber); color:var(--navy); font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; padding:5px 14px; border-radius:3px; margin-bottom:20px; }
+  .hero h1 { font-family:'Barlow Condensed',sans-serif; font-size:clamp(38px,5vw,66px); font-weight:900; line-height:1.0; text-transform:uppercase; color:#fff; margin-bottom:20px; }
   .hero h1 span { color:var(--amber); }
-  .hero p {
-    font-size:16px; color:var(--gray); line-height:1.7;
-    margin-bottom:32px; font-weight:400;
-  }
+  .hero p { font-size:16px; color:var(--gray); line-height:1.7; margin-bottom:32px; }
   .hero-btns { display:flex; gap:14px; flex-wrap:wrap; }
-  .btn-primary {
-    background:var(--amber); color:var(--navy);
-    padding:14px 32px; border-radius:4px;
-    font-weight:800; font-size:13px; letter-spacing:1.5px; text-transform:uppercase;
-    text-decoration:none; transition:all .2s;
-    border:2px solid var(--amber);
-  }
-  .btn-primary:hover { background:var(--amber2); transform:translateY(-2px); box-shadow:0 8px 24px rgba(232,134,26,0.3); }
-  .btn-outline {
-    background:transparent; color:#fff;
-    padding:14px 32px; border-radius:4px;
-    font-weight:700; font-size:13px; letter-spacing:1.5px; text-transform:uppercase;
-    text-decoration:none; border:2px solid rgba(255,255,255,0.3); transition:all .2s;
-  }
+  .hero-dots { position:absolute; bottom:28px; left:80px; display:flex; gap:8px; z-index:10; }
+  .hero-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.3); cursor:pointer; transition:all .3s; }
+  .hero-dot.active { background:var(--amber); width:24px; border-radius:4px; }
+
+  /* BUTTONS */
+  .btn-primary { background:var(--amber); color:var(--navy); padding:14px 32px; border-radius:4px; font-weight:800; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; transition:all .2s; border:2px solid var(--amber); display:inline-block; }
+  .btn-primary:hover { background:var(--amber2); transform:translateY(-2px); box-shadow:0 8px 24px rgba(232,134,26,0.35); }
+  .btn-outline { background:transparent; color:#fff; padding:14px 32px; border-radius:4px; font-weight:700; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; border:2px solid rgba(255,255,255,0.3); transition:all .2s; display:inline-block; }
   .btn-outline:hover { border-color:var(--amber); color:var(--amber); }
 
-  /* ── STATS BAR ── */
-  .stats-bar {
-    background:var(--amber);
-    padding:16px 80px;
-    display:flex; justify-content:space-around; align-items:center;
-    gap:20px;
-  }
+  /* STATS BAR */
+  .stats-bar { background:var(--amber); padding:16px 80px; display:flex; justify-content:space-around; align-items:center; gap:20px; }
   .stat { text-align:center; }
   .stat-num { font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:900; color:var(--navy); }
   .stat-lbl { font-size:11px; font-weight:700; color:var(--navy); opacity:0.7; letter-spacing:1px; text-transform:uppercase; }
 
-  /* ── SECTION HEADINGS ── */
-  .section-head {
-    text-align:center; padding:60px 40px 20px;
-  }
-  .section-head .eyebrow {
-    display:inline-flex; align-items:center; gap:10px;
-    font-size:11px; font-weight:800; letter-spacing:3px; color:var(--amber);
-    text-transform:uppercase; margin-bottom:14px;
-  }
-  .section-head .eyebrow::before, .section-head .eyebrow::after {
-    content:''; display:block; width:30px; height:2px; background:var(--amber);
-  }
-  .section-head h2 {
-    font-family:'Barlow Condensed',sans-serif;
-    font-size:clamp(30px,4vw,48px); font-weight:900; text-transform:uppercase;
-    color:#fff; margin-bottom:14px;
-  }
-  .section-head p { color:var(--gray); max-width:560px; margin:0 auto; line-height:1.7; }
+  /* SECTION HEADINGS */
+  .section-head { text-align:center; padding:60px 40px 20px; }
+  .section-head .eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:11px; font-weight:800; letter-spacing:3px; color:var(--amber); text-transform:uppercase; margin-bottom:14px; }
+  .section-head .eyebrow::before,.section-head .eyebrow::after { content:''; display:block; width:30px; height:2px; background:var(--amber); }
+  .section-head h2 { font-family:'Barlow Condensed',sans-serif; font-size:clamp(30px,4vw,48px); font-weight:900; text-transform:uppercase; color:#fff; margin-bottom:14px; }
+  .section-head p { color:var(--gray); max-width:580px; margin:0 auto; line-height:1.7; }
 
-  /* ── CARD GRID (like NAPCO 3x2) ── */
-  .card-grid {
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:2px;
-    padding:30px 40px 60px;
-    max-width:1200px; margin:0 auto;
-  }
-  .card {
-    position:relative; height:260px;
-    overflow:hidden; cursor:pointer;
-    display:flex; flex-direction:column;
-    justify-content:flex-end;
-  }
-  .card-img {
-    position:absolute; inset:0;
-    background-size:cover; background-position:center;
-    filter:saturate(0.2) brightness(0.5);
-    transition:transform .5s ease, filter .4s;
-  }
-  .card:hover .card-img { transform:scale(1.07); filter:saturate(0.5) brightness(0.6); }
-  .card-overlay {
-    position:absolute; inset:0;
-    background:linear-gradient(0deg, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.3) 60%, transparent 100%);
-  }
-  .card:hover .card-overlay { background:linear-gradient(0deg, rgba(10,22,40,0.98) 0%, rgba(10,22,40,0.5) 70%, rgba(10,22,40,0.1) 100%); }
-  .card-body { position:relative; z-index:2; padding:24px 22px 20px; }
-  .card-badge {
-    display:inline-block;
-    background:var(--amber); color:var(--navy);
-    font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase;
-    padding:3px 10px; border-radius:2px; margin-bottom:8px;
-  }
-  .card-title {
-    font-family:'Barlow Condensed',sans-serif;
-    font-size:26px; font-weight:900; text-transform:uppercase; color:#fff;
-    line-height:1.1;
-  }
+  /* ── VEHICLE SHOWCASE SECTION ── */
+  .vehicles-section { padding:20px 40px 60px; background:var(--navy); }
+  .vehicles-tabs { display:flex; gap:0; max-width:1200px; margin:0 auto 0; border-bottom:2px solid rgba(255,255,255,0.08); }
+  .vtab { padding:14px 28px; font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--gray); cursor:pointer; border-bottom:3px solid transparent; margin-bottom:-2px; transition:all .2s; }
+  .vtab:hover { color:#fff; }
+  .vtab.active { color:var(--amber); border-bottom-color:var(--amber); }
+  .vehicle-panels { max-width:1200px; margin:0 auto; }
+  .vehicle-panel { display:none; }
+  .vehicle-panel.active { display:grid; grid-template-columns:1.1fr 1fr; gap:0; min-height:420px; }
+  .veh-img-wrap { position:relative; overflow:hidden; }
+  .veh-img-wrap img { width:100%; height:100%; object-fit:cover; filter:saturate(0.5) brightness(0.7); transition:transform .6s; display:block; }
+  .veh-img-wrap:hover img { transform:scale(1.04); filter:saturate(0.7) brightness(0.8); }
+  .veh-img-overlay { position:absolute; inset:0; background:linear-gradient(90deg,transparent 50%,var(--navy) 100%); }
+  .veh-badge { position:absolute; top:20px; left:20px; background:var(--amber); color:var(--navy); font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:900; letter-spacing:2px; text-transform:uppercase; padding:6px 16px; border-radius:3px; }
+  .veh-info { background:var(--navy2); padding:40px 44px; display:flex; flex-direction:column; justify-content:center; }
+  .veh-info h3 { font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:900; text-transform:uppercase; color:#fff; margin-bottom:6px; line-height:1; }
+  .veh-info .veh-subtitle { color:var(--amber); font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:18px; }
+  .veh-info p { color:var(--gray); line-height:1.75; font-size:14px; margin-bottom:20px; }
+  .veh-specs { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:24px; }
+  .veh-spec { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:6px; padding:10px 14px; }
+  .veh-spec .spec-key { font-size:10px; font-weight:800; color:var(--amber); letter-spacing:2px; text-transform:uppercase; margin-bottom:4px; }
+  .veh-spec .spec-val { font-size:14px; font-weight:600; color:#fff; }
+  .veh-parts-label { font-size:11px; font-weight:800; color:var(--amber); letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; }
+  .veh-parts-chips { display:flex; gap:8px; flex-wrap:wrap; }
+  .veh-chip { background:var(--card-bg); border:1px solid var(--border); color:var(--light); font-size:12px; font-weight:600; padding:5px 12px; border-radius:20px; cursor:pointer; transition:all .2s; }
+  .veh-chip:hover { background:var(--amber); color:var(--navy); border-color:var(--amber); }
+
+  /* VEHICLE PARTS GRID */
+  .veh-parts-section { padding:10px 40px 60px; background:var(--navy2); }
+  .parts-grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; max-width:1200px; margin:0 auto; }
+
+  /* NAPCO-style 6-card grid */
+  .card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; padding:30px 40px 60px; max-width:1200px; margin:0 auto; }
+  .card { position:relative; height:270px; overflow:hidden; cursor:pointer; display:flex; flex-direction:column; justify-content:flex-end; }
+  .card-img { position:absolute; inset:0; background-size:cover; background-position:center; filter:saturate(0.25) brightness(0.45); transition:transform .5s ease, filter .4s; }
+  .card:hover .card-img { transform:scale(1.07); filter:saturate(0.55) brightness(0.6); }
+  .card-overlay { position:absolute; inset:0; background:linear-gradient(0deg,rgba(10,22,40,0.95) 0%,rgba(10,22,40,0.25) 60%,transparent 100%); }
+  .card:hover .card-overlay { background:linear-gradient(0deg,rgba(10,22,40,0.98) 0%,rgba(10,22,40,0.5) 70%,rgba(10,22,40,0.1) 100%); }
+  .card-body { position:relative; z-index:2; padding:24px 22px 22px; }
+  .card-badge { display:inline-block; background:var(--amber); color:var(--navy); font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:2px; margin-bottom:8px; }
+  .card-title { font-family:'Barlow Condensed',sans-serif; font-size:26px; font-weight:900; text-transform:uppercase; color:#fff; line-height:1.1; }
   .card-sub { font-size:12px; color:var(--gray); margin-top:4px; font-weight:500; letter-spacing:.5px; }
-  .card-icon {
-    position:absolute; top:0; left:0; right:0;
-    display:flex; align-items:center; justify-content:center;
-    height:calc(100% - 90px);
-    z-index:2;
-  }
-  .card-icon svg { width:48px; height:48px; opacity:0.5; }
-  .card:hover .card-icon svg { opacity:0.8; }
-
-  /* Card images via gradient + color tints */
-  .c1 .card-img { background:linear-gradient(135deg,#1a2a4a,#0d1e38), url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600') center/cover; background-blend-mode:multiply; }
-  .c2 .card-img { background:linear-gradient(135deg,#1a2a4a,#0d1e38), url('https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=600') center/cover; background-blend-mode:multiply; }
-  .c3 .card-img { background:linear-gradient(135deg,#1a2a4a,#0d1e38), url('https://images.unsplash.com/photo-1618316583590-6a1d9e0ddea7?w=600') center/cover; background-blend-mode:multiply; }
-  .c4 .card-img { background:linear-gradient(135deg,#1a2a4a,#0d1e38), url('https://images.unsplash.com/photo-1565043673833-5898c7498e05?w=600') center/cover; background-blend-mode:multiply; }
-  .c5 .card-img { background:linear-gradient(135deg,#1a2a4a,#0d1e38), url('https://images.unsplash.com/photo-1542362567-b07e54358753?w=600') center/cover; background-blend-mode:multiply; }
-  .c6 .card-img { background:linear-gradient(135deg,#1a2a4a,#0d1e38), url('https://images.unsplash.com/photo-1581090124790-b1c8d56697a9?w=600') center/cover; background-blend-mode:multiply; }
-
-  /* Card hover arrow */
-  .card-arrow {
-    position:absolute; bottom:22px; right:22px;
-    width:32px; height:32px; border-radius:50%;
-    background:var(--amber); display:flex; align-items:center; justify-content:center;
-    z-index:3; opacity:0; transform:scale(0.6);
-    transition:all .3s;
-  }
+  .card-arrow { position:absolute; bottom:22px; right:22px; width:32px; height:32px; border-radius:50%; background:var(--amber); display:flex; align-items:center; justify-content:center; z-index:3; opacity:0; transform:scale(0.6); transition:all .3s; }
   .card:hover .card-arrow { opacity:1; transform:scale(1); }
-  .card-arrow svg { width:14px; height:14px; }
 
-  /* ── FEATURED PRODUCTS ── */
-  .products-section { padding:10px 40px 70px; background:var(--navy2); }
-  .products-grid {
-    display:grid; grid-template-columns:repeat(4,1fr);
-    gap:18px; max-width:1200px; margin:0 auto;
-  }
-  .product-card {
-    background:var(--card-bg);
-    border:1px solid rgba(255,255,255,0.06);
-    border-radius:8px; overflow:hidden;
-    transition:transform .3s, box-shadow .3s;
-    cursor:pointer;
-  }
+  /* PRODUCT CARD */
+  .product-card { background:var(--card-bg); border:1px solid rgba(255,255,255,0.06); border-radius:8px; overflow:hidden; transition:transform .3s, box-shadow .3s; cursor:pointer; }
   .product-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,0.4), 0 0 0 1px var(--amber); }
-  .product-img {
-    height:170px;
-    background:var(--navy3);
-    display:flex; align-items:center; justify-content:center;
-    position:relative; overflow:hidden;
-  }
-  .product-img img { width:100%; height:100%; object-fit:cover; filter:saturate(0.5) brightness(0.8); }
-  .product-img .prod-overlay {
-    position:absolute; inset:0;
-    background:linear-gradient(135deg, rgba(10,22,40,0.3), rgba(232,134,26,0.08));
-  }
-  .prod-badge {
-    position:absolute; top:10px; left:10px;
-    background:var(--red); color:#fff;
-    font-size:10px; font-weight:800; letter-spacing:1px; text-transform:uppercase;
-    padding:3px 8px; border-radius:3px;
-  }
+  .product-img { height:170px; background:var(--navy3); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+  .product-img img { width:100%; height:100%; object-fit:cover; filter:saturate(0.5) brightness(0.8); transition:transform .4s; }
+  .product-card:hover .product-img img { transform:scale(1.05); }
+  .product-img .prod-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(10,22,40,0.3),rgba(232,134,26,0.08)); }
+  .prod-badge { position:absolute; top:10px; left:10px; background:var(--red); color:#fff; font-size:10px; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; border-radius:3px; }
   .prod-badge.new { background:var(--amber); color:var(--navy); }
+  .prod-badge.hot { background:#8b1a9e; color:#fff; }
   .product-info { padding:16px; }
   .prod-cat { font-size:10px; font-weight:700; color:var(--amber); letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
-  .prod-name { font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; color:#fff; margin-bottom:6px; line-height:1.2; }
+  .prod-name { font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; color:#fff; margin-bottom:5px; line-height:1.2; }
   .prod-sku { font-size:11px; color:var(--gray); margin-bottom:10px; }
   .prod-price { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:800; color:var(--amber); }
   .prod-price .old { font-size:14px; color:var(--gray); text-decoration:line-through; margin-right:6px; font-family:'Barlow',sans-serif; font-weight:400; }
   .prod-footer { display:flex; gap:8px; padding:0 16px 16px; }
-  .btn-cart {
-    flex:1; background:var(--amber); color:var(--navy);
-    border:none; padding:10px; border-radius:4px;
-    font-weight:800; font-size:12px; letter-spacing:1px; text-transform:uppercase;
-    cursor:pointer; transition:background .2s;
-  }
+  .btn-cart { flex:1; background:var(--amber); color:var(--navy); border:none; padding:10px; border-radius:4px; font-weight:800; font-size:12px; letter-spacing:1px; text-transform:uppercase; cursor:pointer; transition:background .2s; font-family:'Barlow',sans-serif; }
   .btn-cart:hover { background:var(--amber2); }
-  .btn-wish {
-    width:38px; height:38px; border-radius:4px;
-    background:var(--navy3); border:1px solid rgba(255,255,255,0.1);
-    display:flex; align-items:center; justify-content:center;
-    cursor:pointer; transition:all .2s;
-  }
+  .btn-wish { width:38px; height:38px; border-radius:4px; background:var(--navy3); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .2s; }
   .btn-wish:hover { border-color:var(--amber); }
   .btn-wish svg { width:16px; height:16px; }
 
-  /* ── ABOUT STRIP ── */
-  .about-strip {
-    display:grid; grid-template-columns:1fr 1fr;
-    min-height:420px;
-    overflow:hidden;
-  }
-  .about-img {
-    background:url('https://images.unsplash.com/photo-1565043673833-5898c7498e05?w=800') center/cover no-repeat;
-    filter:saturate(0.3) brightness(0.6);
-    position:relative;
-  }
-  .about-img::after {
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(90deg, transparent, var(--navy) 95%);
-  }
-  .about-content {
-    background:var(--navy);
-    padding:60px 60px 60px 50px;
-    display:flex; flex-direction:column; justify-content:center;
-  }
-  .about-content h2 {
-    font-family:'Barlow Condensed',sans-serif;
-    font-size:42px; font-weight:900; text-transform:uppercase;
-    color:#fff; margin-bottom:20px; line-height:1.05;
-  }
+  /* ABOUT STRIP */
+  .about-strip { display:grid; grid-template-columns:1fr 1fr; min-height:420px; overflow:hidden; }
+  .about-img { position:relative; overflow:hidden; }
+  .about-img img { width:100%; height:100%; object-fit:cover; filter:saturate(0.3) brightness(0.55); display:block; }
+  .about-img::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,transparent,var(--navy) 95%); }
+  .about-content { background:var(--navy); padding:60px 60px 60px 50px; display:flex; flex-direction:column; justify-content:center; }
+  .about-content h2 { font-family:'Barlow Condensed',sans-serif; font-size:42px; font-weight:900; text-transform:uppercase; color:#fff; margin-bottom:20px; line-height:1.05; }
   .about-content h2 span { color:var(--amber); }
   .about-content p { color:var(--gray); line-height:1.8; margin-bottom:16px; }
   .about-features { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:24px 0; }
-  .about-feat {
-    display:flex; align-items:flex-start; gap:12px;
-  }
-  .feat-icon {
-    width:36px; height:36px; flex-shrink:0;
-    background:rgba(232,134,26,0.15); border-radius:6px;
-    display:flex; align-items:center; justify-content:center;
-  }
+  .about-feat { display:flex; align-items:flex-start; gap:12px; }
+  .feat-icon { width:36px; height:36px; flex-shrink:0; background:rgba(232,134,26,0.15); border-radius:6px; display:flex; align-items:center; justify-content:center; }
   .feat-icon svg { width:18px; height:18px; color:var(--amber); }
   .feat-text strong { display:block; font-size:13px; font-weight:700; color:#fff; margin-bottom:2px; }
   .feat-text span { font-size:12px; color:var(--gray); }
 
-  /* ── CATEGORIES BANNER ── */
-  .cat-section { padding:60px 40px; background:var(--navy2); }
-  .cat-grid {
-    display:flex; gap:12px;
-    max-width:1200px; margin:0 auto;
-    overflow-x:auto; padding-bottom:8px;
-  }
-  .cat-pill {
-    flex-shrink:0;
-    background:var(--card-bg); border:1px solid var(--border);
-    border-radius:40px; padding:10px 22px;
-    display:flex; align-items:center; gap:8px;
-    cursor:pointer; transition:all .2s; text-decoration:none;
-  }
-  .cat-pill:hover, .cat-pill.active { background:var(--amber); border-color:var(--amber); }
-  .cat-pill:hover span, .cat-pill.active span { color:var(--navy); }
-  .cat-pill span { font-size:13px; font-weight:700; color:#fff; white-space:nowrap; }
-  .cat-pill.active span { color:var(--navy); }
+  /* SERVICES */
+  .services-section { padding:60px 40px; }
+  .services-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; max-width:1200px; margin:0 auto; }
+  .service-card { background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:28px 22px; text-align:center; transition:all .3s; cursor:pointer; }
+  .service-card:hover { border-color:var(--amber); transform:translateY(-4px); }
+  .service-icon { width:56px; height:56px; border-radius:12px; background:rgba(232,134,26,0.12); margin:0 auto 18px; display:flex; align-items:center; justify-content:center; }
+  .service-icon svg { width:26px; height:26px; color:var(--amber); }
+  .service-card h3 { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; color:#fff; text-transform:uppercase; margin-bottom:10px; }
+  .service-card p { font-size:13px; color:var(--gray); line-height:1.7; }
 
-  /* ── STOCKS PAGE ── */
+  /* DOCS STRIP */
+  .docs-strip { background:var(--navy3); padding:30px 80px; display:flex; align-items:center; gap:40px; flex-wrap:wrap; }
+  .doc-item { display:flex; align-items:center; gap:14px; text-decoration:none; }
+  .doc-star { color:var(--amber); font-size:20px; }
+  .doc-item-label { font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:800; text-transform:uppercase; color:#fff; letter-spacing:1px; }
+  .doc-item-action { background:var(--amber); color:var(--navy); font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:3px; }
+
+  /* STOCKS PAGE */
   .stocks-page { display:none; }
   .stocks-page.visible { display:block; }
-  .main-page { }
   .main-page.hidden { display:none; }
+  .items-page { display:none; }
+  .items-page.visible { display:block; }
 
-  .page-header {
-    background:linear-gradient(135deg, var(--navy2), var(--navy));
-    padding:50px 80px 40px;
-    border-bottom:2px solid var(--amber);
-  }
-  .page-header h1 {
-    font-family:'Barlow Condensed',sans-serif;
-    font-size:48px; font-weight:900; color:#fff; text-transform:uppercase;
-  }
+  .page-header { background:linear-gradient(135deg,var(--navy2),var(--navy)); padding:50px 80px 40px; border-bottom:2px solid var(--amber); }
+  .page-header h1 { font-family:'Barlow Condensed',sans-serif; font-size:48px; font-weight:900; color:#fff; text-transform:uppercase; }
   .page-header p { color:var(--gray); margin-top:8px; }
   .breadcrumb { display:flex; gap:8px; align-items:center; margin-bottom:16px; }
-  .breadcrumb a { color:var(--amber); text-decoration:none; font-size:13px; }
+  .breadcrumb a { color:var(--amber); text-decoration:none; font-size:13px; cursor:pointer; }
   .breadcrumb span { color:var(--gray); font-size:13px; }
 
-  /* Stock table */
+  /* STOCK TABLE */
   .stocks-content { padding:40px 80px; }
-  .stock-controls {
-    display:flex; gap:14px; align-items:center;
-    margin-bottom:28px; flex-wrap:wrap;
-  }
-  .stock-search {
-    flex:1; min-width:220px;
-    background:var(--card-bg); border:1px solid rgba(255,255,255,0.1);
-    border-radius:6px; padding:12px 18px;
-    color:#fff; font-size:14px; font-family:'Barlow',sans-serif;
-    outline:none; transition:border .2s;
-  }
+  .stock-controls { display:flex; gap:14px; align-items:center; margin-bottom:28px; flex-wrap:wrap; }
+  .stock-search { flex:1; min-width:220px; background:var(--card-bg); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:12px 18px; color:#fff; font-size:14px; font-family:'Barlow',sans-serif; outline:none; transition:border .2s; }
   .stock-search:focus { border-color:var(--amber); }
-  .stock-select {
-    background:var(--card-bg); border:1px solid rgba(255,255,255,0.1);
-    border-radius:6px; padding:12px 18px;
-    color:#fff; font-size:13px; font-family:'Barlow',sans-serif;
-    outline:none; cursor:pointer;
-  }
+  .stock-select { background:var(--card-bg); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:12px 18px; color:#fff; font-size:13px; font-family:'Barlow',sans-serif; outline:none; cursor:pointer; }
   .stock-table { width:100%; border-collapse:collapse; }
-  .stock-table th {
-    background:var(--navy3); color:var(--amber);
-    font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase;
-    padding:14px 18px; text-align:left;
-    border-bottom:2px solid var(--border);
-  }
-  .stock-table td {
-    padding:14px 18px;
-    border-bottom:1px solid rgba(255,255,255,0.04);
-    font-size:14px; color:var(--light);
-    vertical-align:middle;
-  }
+  .stock-table th { background:var(--navy3); color:var(--amber); font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:14px 18px; text-align:left; border-bottom:2px solid var(--border); }
+  .stock-table td { padding:13px 18px; border-bottom:1px solid rgba(255,255,255,0.04); font-size:14px; color:var(--light); vertical-align:middle; }
   .stock-table tr:hover td { background:rgba(232,134,26,0.04); }
-  .stock-status {
-    display:inline-block; padding:3px 10px; border-radius:20px;
-    font-size:10px; font-weight:800; letter-spacing:1px; text-transform:uppercase;
-  }
+  .stock-status { display:inline-block; padding:3px 10px; border-radius:20px; font-size:10px; font-weight:800; letter-spacing:1px; text-transform:uppercase; }
   .in-stock { background:rgba(39,174,96,0.15); color:#27ae60; }
   .low-stock { background:rgba(232,134,26,0.15); color:var(--amber); }
   .out-stock { background:rgba(192,57,43,0.15); color:var(--red); }
   .stock-table .sku { font-family:monospace; font-size:12px; color:var(--gray); }
   .stock-price { font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; color:var(--amber); }
 
-  /* ── ITEMS PAGE ── */
-  .items-page { display:none; }
-  .items-page.visible { display:block; }
-  .items-grid {
-    display:grid; grid-template-columns:240px 1fr;
-    gap:30px; padding:40px 80px;
-  }
-  .filter-panel {
-    background:var(--card-bg); border-radius:8px;
-    border:1px solid rgba(255,255,255,0.06);
-    padding:24px; height:fit-content;
-  }
+  /* ITEMS PAGE */
+  .items-grid { display:grid; grid-template-columns:240px 1fr; gap:30px; padding:40px 80px; }
+  .filter-panel { background:var(--card-bg); border-radius:8px; border:1px solid rgba(255,255,255,0.06); padding:24px; height:fit-content; }
   .filter-title { font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:800; color:#fff; margin-bottom:20px; text-transform:uppercase; }
   .filter-group { margin-bottom:24px; }
   .filter-group-title { font-size:11px; font-weight:800; color:var(--amber); letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; }
@@ -452,92 +223,44 @@
   .filter-check input { accent-color:var(--amber); width:15px; height:15px; }
   .filter-check label { font-size:13px; color:var(--light); cursor:pointer; }
   .filter-range { width:100%; accent-color:var(--amber); }
-  .items-content { }
   .items-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; flex-wrap:wrap; gap:12px; }
   .items-count { color:var(--gray); font-size:13px; }
-  .items-sort {
-    background:var(--card-bg); border:1px solid rgba(255,255,255,0.1);
-    border-radius:6px; padding:10px 16px;
-    color:#fff; font-size:13px; font-family:'Barlow',sans-serif; outline:none;
-  }
+  .items-sort { background:var(--card-bg); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:10px 16px; color:#fff; font-size:13px; font-family:'Barlow',sans-serif; outline:none; }
   .items-list { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 
-  /* ── SERVICES ROW ── */
-  .services-section { padding:60px 40px; }
-  .services-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; max-width:1200px; margin:0 auto; }
-  .service-card {
-    background:var(--card-bg); border:1px solid var(--border);
-    border-radius:8px; padding:28px 22px; text-align:center;
-    transition:all .3s; cursor:pointer;
-  }
-  .service-card:hover { border-color:var(--amber); transform:translateY(-4px); }
-  .service-icon {
-    width:56px; height:56px; border-radius:12px;
-    background:rgba(232,134,26,0.12); margin:0 auto 18px;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .service-icon svg { width:26px; height:26px; color:var(--amber); }
-  .service-card h3 { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:800; color:#fff; text-transform:uppercase; margin-bottom:10px; }
-  .service-card p { font-size:13px; color:var(--gray); line-height:1.7; }
+  /* CATEGORY PILLS */
+  .cat-section { padding:40px 40px 30px; background:var(--navy2); }
+  .cat-grid { display:flex; gap:12px; max-width:1200px; margin:0 auto; overflow-x:auto; padding-bottom:8px; }
+  .cat-pill { flex-shrink:0; background:var(--card-bg); border:1px solid var(--border); border-radius:40px; padding:10px 22px; display:flex; align-items:center; gap:8px; cursor:pointer; transition:all .2s; text-decoration:none; }
+  .cat-pill:hover,.cat-pill.active { background:var(--amber); border-color:var(--amber); }
+  .cat-pill span { font-size:13px; font-weight:700; color:#fff; white-space:nowrap; }
+  .cat-pill.active span { color:var(--navy); }
+  .cat-pill:hover span { color:var(--navy); }
 
-  /* ── BROCHURE / CERTS STRIP ── */
-  .docs-strip {
-    background:var(--navy3); padding:30px 80px;
-    display:flex; align-items:center; gap:40px; flex-wrap:wrap;
-  }
-  .doc-item {
-    display:flex; align-items:center; gap:14px;
-    text-decoration:none;
-  }
-  .doc-star { color:var(--amber); font-size:20px; }
-  .doc-item-label {
-    font-family:'Barlow Condensed',sans-serif;
-    font-size:18px; font-weight:800; text-transform:uppercase; color:#fff;
-    letter-spacing:1px;
-  }
-  .doc-item-action {
-    background:var(--amber); color:var(--navy);
-    font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase;
-    padding:5px 14px; border-radius:3px;
-    margin-left:4px;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background:#060e1c;
-    padding:50px 80px 30px;
-  }
+  /* FOOTER */
+  footer { background:#060e1c; padding:50px 80px 30px; }
   .footer-grid { display:grid; grid-template-columns:1.2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
   .footer-brand .brand-name { font-family:'Barlow Condensed',sans-serif; font-size:26px; font-weight:900; color:#fff; letter-spacing:2px; margin-bottom:8px; }
   .footer-brand .brand-tag { color:var(--amber); font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; margin-bottom:16px; }
   .footer-brand p { color:var(--gray); font-size:13px; line-height:1.8; margin-bottom:16px; }
   .footer-contact p { color:var(--gray); font-size:13px; line-height:1.9; }
   .footer-contact strong { color:#fff; }
-  .footer-col h4 {
-    font-family:'Barlow Condensed',sans-serif;
-    font-size:16px; font-weight:800; text-transform:uppercase;
-    color:#fff; letter-spacing:2px; margin-bottom:18px;
-  }
-  .footer-col a { display:block; color:var(--gray); text-decoration:none; font-size:13px; margin-bottom:8px; transition:color .2s; }
+  .footer-col h4 { font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800; text-transform:uppercase; color:#fff; letter-spacing:2px; margin-bottom:18px; }
+  .footer-col a { display:block; color:var(--gray); text-decoration:none; font-size:13px; margin-bottom:8px; transition:color .2s; cursor:pointer; }
   .footer-col a:hover { color:var(--amber); padding-left:4px; }
-  .footer-bottom {
-    border-top:1px solid rgba(255,255,255,0.06);
-    padding-top:24px; display:flex;
-    justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
-  }
+  .footer-bottom { border-top:1px solid rgba(255,255,255,0.06); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
   .footer-bottom p { color:var(--gray); font-size:12px; }
 
-  /* Scrollbar */
   ::-webkit-scrollbar { width:6px; height:6px; }
   ::-webkit-scrollbar-track { background:var(--navy); }
   ::-webkit-scrollbar-thumb { background:var(--amber); border-radius:3px; }
 
-  /* Divider */
-  .amber-line { height:3px; background:linear-gradient(90deg, var(--amber), transparent); }
-
-  /* Utility */
-  .text-amber { color:var(--amber); }
-  .hidden { display:none!important; }
+  /* notify btn */
+  .btn-notify { padding:7px 14px; font-size:11px; background:var(--navy3); color:var(--gray); border:1px solid rgba(255,255,255,0.1); border-radius:4px; cursor:pointer; white-space:nowrap; font-family:'Barlow',sans-serif; }
+  .btn-notify:hover { border-color:var(--amber); color:var(--amber); }
+  .btn-sm-cart { padding:7px 14px; font-size:11px; white-space:nowrap; }
+  .pager-btn { padding:10px 18px; background:var(--card-bg); border:1px solid rgba(255,255,255,0.1); border-radius:4px; color:#fff; cursor:pointer; font-family:'Barlow',sans-serif; }
+  .pager-btn.active { background:var(--amber); border-color:var(--amber); color:var(--navy); font-weight:700; }
 </style>
 </head>
 <body>
@@ -545,9 +268,7 @@
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="social">
-    <a href="#">f</a>
-    <a href="#">in</a>
-    <a href="#">@</a>
+    <a href="#">f</a><a href="#">in</a><a href="#">@</a>
   </div>
   <div>
     <a href="#">☎ +92 300 000 0000</a>
@@ -558,85 +279,70 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <a class="logo" href="#" onclick="showPage('home')">
+  <div class="logo" onclick="showPage('home')">
     <div class="logo-mark"><div class="logo-inner"></div></div>
     <div class="logo-text">
       <div class="brand">RELCO</div>
       <div class="sub">International LLC</div>
     </div>
-  </a>
+  </div>
   <div class="nav-links">
-    <a href="#" class="active" onclick="showPage('home',this)">Home</a>
-    <a href="#" onclick="showPage('stocks',this)">Stocks</a>
-    <a href="#" onclick="showPage('items',this)">All Items</a>
-    <a href="#about" onclick="showPage('home',this)">About</a>
-    <a href="#services" onclick="showPage('home',this)">Services</a>
-    <a href="#" onclick="showPage('home',this)">Quality</a>
-    <a href="#contact" onclick="showPage('home',this)">Contact Us</a>
-    <a href="#" class="nav-cta">Get Quote</a>
+    <a class="active" onclick="showPage('home',this)">Home</a>
+    <a onclick="showPage('vehicles',this)">Vehicles</a>
+    <a onclick="showPage('stocks',this)">Stocks</a>
+    <a onclick="showPage('items',this)">All Items</a>
+    <a onclick="showPage('home',this)">About</a>
+    <a onclick="showPage('home',this)">Quality</a>
+    <a onclick="showPage('home',this)">Contact</a>
+    <a class="nav-cta">Get Quote</a>
   </div>
 </nav>
 
-<!-- ═══════════════════ HOME PAGE ═══════════════════ -->
+<!-- ════════════════ HOME PAGE ════════════════ -->
 <div id="mainPage" class="main-page">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg"></div>
+  <!-- HERO SLIDER -->
+  <section class="hero" id="heroSection">
+    <div class="hero-bg" id="heroBg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/M812_bridge_truck.jpg/1280px-M812_bridge_truck.jpg');"></div>
     <div class="hero-overlay"></div>
-    <div class="hero-geo"></div>
-    <div class="hero-geo2"></div>
+    <div class="hero-geo"></div><div class="hero-geo2"></div>
     <div class="hero-content">
-      <div class="hero-tag">⚙ Trusted Since 1998</div>
-      <h1>A Reliable Source<br>For <span>Auto Parts</span><br>& Components</h1>
-      <p>RELCO International delivers quality-certified OEM and aftermarket auto parts. Serving workshops, dealers, and fleet operators with ready inventory and fast dispatch.</p>
+      <div class="hero-tag" id="heroTag">⚙ M-812 · M113A2 · Tatra T-813 · Praga V3S</div>
+      <h1 id="heroTitle">Specialist Parts for<br><span>Military &amp; Heavy</span><br>Vehicles</h1>
+      <p id="heroDesc">RELCO International stocks genuine and aftermarket components for M-812, APC M113A2, Tatra T-813, Praga V3S, and allied platforms. Quality-certified. Ready inventory.</p>
       <div class="hero-btns">
-        <a href="#" class="btn-primary" onclick="showPage('items')">Browse Catalogue</a>
-        <a href="#" class="btn-outline" onclick="showPage('stocks')">Check Stock</a>
+        <a class="btn-primary" onclick="showPage('vehicles')">Browse Vehicles</a>
+        <a class="btn-outline" onclick="showPage('stocks')">Check Stock</a>
       </div>
+    </div>
+    <div class="hero-dots">
+      <div class="hero-dot active" onclick="setSlide(0)"></div>
+      <div class="hero-dot" onclick="setSlide(1)"></div>
+      <div class="hero-dot" onclick="setSlide(2)"></div>
+      <div class="hero-dot" onclick="setSlide(3)"></div>
     </div>
   </section>
 
-  <!-- STATS BAR -->
+  <!-- STATS -->
   <div class="stats-bar">
     <div class="stat"><div class="stat-num">12,000+</div><div class="stat-lbl">Parts in Stock</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-lbl">Major Platforms</div></div>
     <div class="stat"><div class="stat-num">25+</div><div class="stat-lbl">Years Experience</div></div>
-    <div class="stat"><div class="stat-num">300+</div><div class="stat-lbl">Brand Partners</div></div>
     <div class="stat"><div class="stat-num">48hr</div><div class="stat-lbl">Fast Dispatch</div></div>
-    <div class="stat"><div class="stat-num">ISO 9001</div><div class="stat-lbl">Certified Quality</div></div>
+    <div class="stat"><div class="stat-num">ISO 9001</div><div class="stat-lbl">Certified</div></div>
   </div>
 
-  <!-- CATEGORY PILLS -->
-  <div class="cat-section">
-    <div class="section-head" style="padding-top:0;padding-bottom:24px;">
-      <div class="eyebrow">Browse by Category</div>
-      <h2>What Are You Looking For?</h2>
-    </div>
-    <div class="cat-grid">
-      <a class="cat-pill active" href="#"><span>🔧 All Parts</span></a>
-      <a class="cat-pill" href="#"><span>🛢 Engine Parts</span></a>
-      <a class="cat-pill" href="#"><span>🔴 Brake Systems</span></a>
-      <a class="cat-pill" href="#"><span>⚡ Electrical</span></a>
-      <a class="cat-pill" href="#"><span>🌀 Filters</span></a>
-      <a class="cat-pill" href="#"><span>🔩 Suspension</span></a>
-      <a class="cat-pill" href="#"><span>❄ Cooling</span></a>
-      <a class="cat-pill" href="#"><span>🔑 Transmission</span></a>
-      <a class="cat-pill" href="#"><span>💨 Exhaust</span></a>
-      <a class="cat-pill" href="#"><span>🪛 Body Parts</span></a>
-    </div>
-  </div>
-
-  <!-- 6-CARD GRID (mirroring NAPCO layout) -->
-  <div style="padding:0 40px 10px; max-width:1200px; margin:0 auto;">
-    <div class="section-head" style="text-align:left; padding:0 0 30px;">
+  <!-- 6-CARD QUICK LINKS (NAPCO layout) -->
+  <div style="padding:0 40px 0;max-width:1200px;margin:0 auto;">
+    <div class="section-head" style="text-align:left;padding:40px 0 28px;">
       <div class="eyebrow" style="justify-content:flex-start;">Quick Links</div>
       <h2>Explore RELCO</h2>
     </div>
   </div>
   <div class="card-grid">
-    <!-- Card 1 -->
-    <div class="card c1" onclick="showPage('home')">
-      <div class="card-img"></div>
+    <!-- Card 1: Who We Are – M113A2 photo -->
+    <div class="card" onclick="showPage('home')">
+      <div class="card-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/M113A2_Camp_Shelby.jpg/1280px-M113A2_Camp_Shelby.jpg');"></div>
       <div class="card-overlay"></div>
       <div class="card-body">
         <div class="card-badge">Company</div>
@@ -645,9 +351,9 @@
       </div>
       <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
-    <!-- Card 2 -->
-    <div class="card c2" onclick="showPage('items')">
-      <div class="card-img"></div>
+    <!-- Card 2: What We Supply – Tatra T-813 photo -->
+    <div class="card" onclick="showPage('items')">
+      <div class="card-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Tatra_813_8x8.jpg/1280px-Tatra_813_8x8.jpg');"></div>
       <div class="card-overlay"></div>
       <div class="card-body">
         <div class="card-badge">Catalogue</div>
@@ -656,9 +362,9 @@
       </div>
       <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
-    <!-- Card 3 -->
-    <div class="card c3" onclick="showPage('home')">
-      <div class="card-img"></div>
+    <!-- Card 3: Contact – M-812 bridge truck -->
+    <div class="card" onclick="showPage('home')">
+      <div class="card-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/M812_bridge_truck.jpg/1280px-M812_bridge_truck.jpg');"></div>
       <div class="card-overlay"></div>
       <div class="card-body">
         <div class="card-badge">Reach Us</div>
@@ -667,35 +373,35 @@
       </div>
       <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
-    <!-- Card 4 -->
-    <div class="card c4" onclick="showPage('home')">
-      <div class="card-img"></div>
+    <!-- Card 4: Support – Praga V3S -->
+    <div class="card" onclick="showPage('home')">
+      <div class="card-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Praga_V3S_military.jpg/1280px-Praga_V3S_military.jpg');"></div>
       <div class="card-overlay"></div>
       <div class="card-body">
         <div class="card-badge">Support</div>
         <div class="card-title">After-Sale Support</div>
-        <div class="card-sub">Vehicles & Fitments Covered</div>
+        <div class="card-sub">All Platforms Supported</div>
       </div>
       <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
-    <!-- Card 5 -->
-    <div class="card c5" onclick="showPage('home')">
-      <div class="card-img"></div>
+    <!-- Card 5: Why RELCO – Tatra convoy -->
+    <div class="card" onclick="showPage('home')">
+      <div class="card-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Tatra_813_KON_military_truck.jpg/1280px-Tatra_813_KON_military_truck.jpg');"></div>
       <div class="card-overlay"></div>
       <div class="card-body">
         <div class="card-badge">Why Us</div>
         <div class="card-title">Why RELCO</div>
-        <div class="card-sub">One-Stop · AS9100D / ISO 9001</div>
+        <div class="card-sub">One-Stop · ISO 9001 Certified</div>
       </div>
       <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
-    <!-- Card 6 -->
-    <div class="card c6" onclick="showPage('stocks')">
-      <div class="card-img"></div>
+    <!-- Card 6: Legacy – M113 variants -->
+    <div class="card" onclick="showPage('stocks')">
+      <div class="card-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/M113_APC_2.jpg/1280px-M113_APC_2.jpg');"></div>
       <div class="card-overlay"></div>
       <div class="card-body">
         <div class="card-badge">Inventory</div>
-        <div class="card-title">Legacy Fitments</div>
+        <div class="card-title">Legacy Platforms</div>
         <div class="card-sub">Technical Data Packages</div>
       </div>
       <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
@@ -703,25 +409,25 @@
   </div>
 
   <!-- FEATURED PRODUCTS -->
-  <div class="products-section">
+  <div style="background:var(--navy2);padding:20px 40px 60px;">
     <div class="section-head">
       <div class="eyebrow">Hot Items</div>
-      <h2>Featured Products</h2>
-      <p>High-demand parts with immediate availability. Verified OEM quality and ready to ship.</p>
+      <h2>Featured Parts</h2>
+      <p>High-demand components with immediate availability across all four vehicle platforms.</p>
     </div>
-    <div class="products-grid">
+    <div class="parts-grid-4" style="max-width:1200px;margin:0 auto;">
 
       <div class="product-card">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?w=300" alt="Oil Filter">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Cummins_NTC_engine.jpg/800px-Cummins_NTC_engine.jpg" alt="Cummins Engine">
           <div class="prod-overlay"></div>
           <div class="prod-badge new">New</div>
         </div>
         <div class="product-info">
-          <div class="prod-cat">Filters</div>
-          <div class="prod-name">Heavy-Duty Oil Filter Pro Series</div>
-          <div class="prod-sku">SKU: RLC-OF-2241</div>
-          <div class="prod-price"><span class="old">Rs 2,800</span>Rs 1,950</div>
+          <div class="prod-cat">M-812 · Engine</div>
+          <div class="prod-name">Cummins NHC-250 Rebuild Kit</div>
+          <div class="prod-sku">SKU: RLC-CUM-2241 · M809 Series</div>
+          <div class="prod-price"><span class="old">Rs 185,000</span>Rs 142,000</div>
         </div>
         <div class="prod-footer">
           <button class="btn-cart">Add to Cart</button>
@@ -731,15 +437,15 @@
 
       <div class="product-card">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=300" alt="Brake Pads">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/General_Motors_Detroit_Diesel_6V53_engine.jpg/800px-General_Motors_Detroit_Diesel_6V53_engine.jpg" alt="Detroit Diesel">
           <div class="prod-overlay"></div>
-          <div class="prod-badge" style="background:var(--amber);color:var(--navy)">Hot</div>
+          <div class="prod-badge hot">Hot</div>
         </div>
         <div class="product-info">
-          <div class="prod-cat">Brake System</div>
-          <div class="prod-name">Ceramic Brake Pad Set – Front Axle</div>
-          <div class="prod-sku">SKU: RLC-BP-0445</div>
-          <div class="prod-price">Rs 4,200</div>
+          <div class="prod-cat">M113A2 · Engine</div>
+          <div class="prod-name">Detroit Diesel 6V53 Head Gasket Set</div>
+          <div class="prod-sku">SKU: RLC-DD-0445 · APC M113A2</div>
+          <div class="prod-price">Rs 28,500</div>
         </div>
         <div class="prod-footer">
           <button class="btn-cart">Add to Cart</button>
@@ -749,32 +455,33 @@
 
       <div class="product-card">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300" alt="Alternator">
-          <div class="prod-overlay"></div>
-        </div>
-        <div class="product-info">
-          <div class="prod-cat">Electrical</div>
-          <div class="prod-name">OEM Alternator 120A – Universal Fit</div>
-          <div class="prod-sku">SKU: RLC-ALT-7701</div>
-          <div class="prod-price"><span class="old">Rs 18,000</span>Rs 14,500</div>
-        </div>
-        <div class="prod-footer">
-          <button class="btn-cart">Add to Cart</button>
-          <div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=300" alt="Timing Belt">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Tatra_engine_T3-930.jpg/800px-Tatra_engine_T3-930.jpg" alt="Tatra Engine">
           <div class="prod-overlay"></div>
           <div class="prod-badge">Sale</div>
         </div>
         <div class="product-info">
-          <div class="prod-cat">Engine Parts</div>
-          <div class="prod-name">Timing Belt Kit with Tensioner</div>
-          <div class="prod-sku">SKU: RLC-TBK-3312</div>
-          <div class="prod-price"><span class="old">Rs 9,500</span>Rs 7,200</div>
+          <div class="prod-cat">Tatra T-813 · Drivetrain</div>
+          <div class="prod-name">Tatra T-930 Air-Cooled Diesel Injectors</div>
+          <div class="prod-sku">SKU: RLC-TAT-7701 · T-813 8x8</div>
+          <div class="prod-price"><span class="old">Rs 62,000</span>Rs 48,500</div>
+        </div>
+        <div class="prod-footer">
+          <button class="btn-cart">Add to Cart</button>
+          <div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Hydraulic_brake_master_cylinder.jpg/800px-Hydraulic_brake_master_cylinder.jpg" alt="Brake">
+          <div class="prod-overlay"></div>
+          <div class="prod-badge new">New</div>
+        </div>
+        <div class="product-info">
+          <div class="prod-cat">Praga V3S · Brake</div>
+          <div class="prod-name">Praga V3S Air-Hydraulic Brake Master Cylinder</div>
+          <div class="prod-sku">SKU: RLC-PRG-3312 · V3S 6x6</div>
+          <div class="prod-price">Rs 18,200</div>
         </div>
         <div class="prod-footer">
           <button class="btn-cart">Add to Cart</button>
@@ -784,22 +491,23 @@
 
     </div>
     <div style="text-align:center;margin-top:36px;">
-      <a href="#" class="btn-primary" onclick="showPage('items')">View Full Catalogue →</a>
+      <a class="btn-primary" onclick="showPage('items')">View Full Catalogue →</a>
     </div>
   </div>
 
   <!-- ABOUT SECTION -->
-  <section id="about" class="about-strip">
-    <div class="about-img"></div>
+  <section class="about-strip">
+    <div class="about-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/M113A2_Camp_Shelby.jpg/1280px-M113A2_Camp_Shelby.jpg" alt="Military Vehicle">
+    </div>
     <div class="about-content">
-      <div class="eyebrow" style="display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:3px;color:var(--amber);text-transform:uppercase;margin-bottom:14px;">
-        <span style="display:block;width:30px;height:2px;background:var(--amber);"></span>
-        About RELCO
+      <div style="display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:3px;color:var(--amber);text-transform:uppercase;margin-bottom:14px;">
+        <span style="display:block;width:30px;height:2px;background:var(--amber);"></span>About RELCO
         <span style="display:block;width:30px;height:2px;background:var(--amber);"></span>
       </div>
-      <h2>Pakistan's <span>Trusted</span><br>Auto Parts Partner</h2>
-      <p>Founded in 1998, RELCO International has grown from a regional distributor into a nationwide solutions provider for automotive parts, serving workshops, dealerships, fleet operators, and commercial enterprises.</p>
-      <p>We stock OEM, aftermarket, and rebuild-grade components for passenger cars, SUVs, light trucks, and commercial vehicles — all quality-certified and readily available.</p>
+      <h2>Specialist in<br><span>Military Vehicle</span><br>Sustainment</h2>
+      <p>Founded in 1998, RELCO International is Pakistan's foremost parts supplier for legacy military platforms — M-812, APC M113A2, Tatra T-813, and Praga V3S — serving defense workshops, government fleets, and authorized maintainers.</p>
+      <p>We stock OEM, aftermarket, and rebuild-grade components with full technical data support and fitment verification on every order.</p>
       <div class="about-features">
         <div class="about-feat">
           <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
@@ -807,7 +515,7 @@
         </div>
         <div class="about-feat">
           <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-          <div class="feat-text"><strong>Nationwide Delivery</strong><span>48-hour dispatch to all cities</span></div>
+          <div class="feat-text"><strong>Nationwide Delivery</strong><span>48-hour dispatch</span></div>
         </div>
         <div class="about-feat">
           <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -815,80 +523,65 @@
         </div>
         <div class="about-feat">
           <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div class="feat-text"><strong>25+ Years</strong><span>Industry experience & trust</span></div>
+          <div class="feat-text"><strong>25+ Years</strong><span>Military parts expertise</span></div>
         </div>
       </div>
-      <a href="#" class="btn-primary" style="display:inline-block;margin-top:8px;">Learn More About Us</a>
+      <a class="btn-primary" style="display:inline-block;margin-top:8px;">Learn More About Us</a>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="services-section">
+  <section class="services-section">
     <div class="section-head">
       <div class="eyebrow">What We Offer</div>
       <h2>Our Services</h2>
-      <p>End-to-end automotive parts solutions tailored for workshops, dealers, and fleet managers.</p>
+      <p>End-to-end military vehicle parts solutions for defence workshops, fleet operators, and government maintainers.</p>
     </div>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
         <h3>OEM Supply</h3>
-        <p>Genuine manufacturer parts for all major brands — Toyota, Honda, Suzuki, KIA, Hyundai, and more.</p>
+        <p>Genuine manufacturer parts for M-812, M113A2, Tatra T-813 and Praga V3S platforms.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <h3>Technical Support</h3>
-        <p>Expert fitment guidance and system compatibility check before every order — free of charge.</p>
+        <h3>Technical Data</h3>
+        <p>NSN cross-reference, TM manuals, and fitment verification before every order — free of charge.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
         <h3>Bulk Orders</h3>
-        <p>Fleet operators and dealers get priority pricing, extended credit terms, and dedicated account managers.</p>
+        <p>Government depots and defence contractors get priority pricing and extended credit terms.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <h3>Local Pickup</h3>
-        <p>Walk-in counter at 12 branches across Pakistan. Same-day collection on in-stock items.</p>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Rebuild Kits</h3>
+        <p>Complete overhaul kits for engines, transmissions, track systems and hydraulics.</p>
       </div>
     </div>
   </section>
 
   <!-- DOCS STRIP -->
   <div class="docs-strip">
-    <a class="doc-item" href="#">
-      <span class="doc-star">★</span>
-      <span class="doc-item-label">Our Catalogue</span>
-      <span class="doc-item-action">Download</span>
-    </a>
-    <a class="doc-item" href="#">
-      <span class="doc-star">★</span>
-      <span class="doc-item-label">Our Certifications</span>
-    </a>
-    <a class="doc-item" href="#">
-      <span class="doc-star">★</span>
-      <span class="doc-item-label">Warranty Policy</span>
-      <span class="doc-item-action">View</span>
-    </a>
-    <a class="doc-item" href="#">
-      <span class="doc-star">★</span>
-      <span class="doc-item-label">Brand Partners</span>
-    </a>
+    <a class="doc-item" href="#"><span class="doc-star">★</span><span class="doc-item-label">Our Brochure</span><span class="doc-item-action">Download</span></a>
+    <a class="doc-item" href="#"><span class="doc-star">★</span><span class="doc-item-label">Our Certifications</span></a>
+    <a class="doc-item" href="#"><span class="doc-star">★</span><span class="doc-item-label">NSN Catalogue</span><span class="doc-item-action">View</span></a>
+    <a class="doc-item" href="#"><span class="doc-star">★</span><span class="doc-item-label">Past Projects</span></a>
   </div>
 
   <!-- CONTACT -->
-  <section id="contact" style="background:var(--navy2); padding:60px 80px;">
+  <section style="background:var(--navy2);padding:60px 80px;">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1200px;margin:0 auto;">
       <div>
-        <div class="eyebrow" style="display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:3px;color:var(--amber);text-transform:uppercase;margin-bottom:14px;">
-          <span style="display:block;width:30px;height:2px;background:var(--amber);"></span>
-          Get In Touch
+        <div style="display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:3px;color:var(--amber);text-transform:uppercase;margin-bottom:14px;">
+          <span style="display:block;width:30px;height:2px;background:var(--amber);"></span>Get In Touch
         </div>
         <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:900;text-transform:uppercase;color:#fff;margin-bottom:20px;">Request a<br><span style="color:var(--amber);">Quote Today</span></h2>
-        <p style="color:var(--gray);line-height:1.8;margin-bottom:24px;">Our parts specialists respond within 2 hours on business days. Bulk inquiries get priority response.</p>
-        <p style="color:var(--light);font-size:14px;margin-bottom:8px;"><strong style="color:var(--amber);">📍 Head Office:</strong> Plot 45 Industrial Zone, Lahore, Pakistan</p>
-        <p style="color:var(--light);font-size:14px;margin-bottom:8px;"><strong style="color:var(--amber);">☎ Phone:</strong> +92 300 000 0000</p>
-        <p style="color:var(--light);font-size:14px;margin-bottom:8px;"><strong style="color:var(--amber);">✉ Email:</strong> info@relcointl.com</p>
-        <p style="color:var(--light);font-size:14px;"><strong style="color:var(--amber);">⏰ Hours:</strong> Mon–Sat: 9:00 AM – 6:00 PM</p>
+        <p style="color:var(--gray);line-height:1.8;margin-bottom:24px;">Our military parts specialists respond within 2 hours on business days. Government and bulk inquiries get priority response.</p>
+        <p style="color:var(--light);font-size:14px;margin-bottom:8px;"><strong style="color:var(--amber);">📍</strong> Plot 45 Industrial Zone, Lahore, Pakistan</p>
+        <p style="color:var(--light);font-size:14px;margin-bottom:8px;"><strong style="color:var(--amber);">☎</strong> +92 300 000 0000</p>
+        <p style="color:var(--light);font-size:14px;margin-bottom:8px;"><strong style="color:var(--amber);">✉</strong> info@relcointl.com</p>
+        <p style="color:var(--light);font-size:14px;"><strong style="color:var(--amber);">⏰</strong> Mon–Sat: 9:00 AM – 6:00 PM</p>
       </div>
       <div style="background:var(--card-bg);border-radius:12px;border:1px solid var(--border);padding:36px;">
         <div style="margin-bottom:18px;">
@@ -900,538 +593,541 @@
           <input type="text" placeholder="+92 or email" style="width:100%;background:var(--navy);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:12px 16px;color:#fff;font-size:14px;font-family:'Barlow',sans-serif;outline:none;">
         </div>
         <div style="margin-bottom:18px;">
+          <label style="display:block;font-size:11px;font-weight:800;color:var(--amber);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Vehicle Platform</label>
+          <select style="width:100%;background:var(--navy);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:12px 16px;color:#fff;font-size:14px;font-family:'Barlow',sans-serif;outline:none;">
+            <option>Select vehicle platform...</option>
+            <option>M-812 (5-ton 6×6)</option>
+            <option>APC M113A2</option>
+            <option>Tatra T-813</option>
+            <option>Praga V3S</option>
+            <option>Other / Multiple</option>
+          </select>
+        </div>
+        <div style="margin-bottom:18px;">
           <label style="display:block;font-size:11px;font-weight:800;color:var(--amber);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Parts Required</label>
-          <textarea rows="4" placeholder="Describe the parts you need..." style="width:100%;background:var(--navy);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:12px 16px;color:#fff;font-size:14px;font-family:'Barlow',sans-serif;outline:none;resize:vertical;"></textarea>
+          <textarea rows="3" placeholder="Describe the parts / NSN numbers..." style="width:100%;background:var(--navy);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:12px 16px;color:#fff;font-size:14px;font-family:'Barlow',sans-serif;outline:none;resize:vertical;"></textarea>
         </div>
         <button class="btn-cart" style="width:100%;padding:14px;font-size:14px;">Send Enquiry →</button>
       </div>
     </div>
   </section>
-
 </div><!-- end mainPage -->
 
-<!-- ═══════════════════ STOCKS PAGE ═══════════════════ -->
+<!-- ════════════════ VEHICLES PAGE ════════════════ -->
+<div id="vehiclesPage" style="display:none;">
+  <div class="page-header">
+    <div class="breadcrumb"><a onclick="showPage('home')">Home</a><span>›</span><span style="color:#fff;">Vehicle Platforms</span></div>
+    <h1>Supported <span style="color:var(--amber);">Platforms</span></h1>
+    <p>RELCO stocks parts for all major legacy military vehicle platforms — browse by vehicle to find exact-fit components.</p>
+  </div>
+
+  <div class="vehicles-section">
+    <div class="section-head" style="padding:40px 0 20px;text-align:left;">
+      <div class="eyebrow" style="justify-content:flex-start;">Select Vehicle</div>
+      <h2>Choose Your Platform</h2>
+    </div>
+    <div class="vehicles-tabs">
+      <div class="vtab active" onclick="switchVehicle('m812',this)">M-812 (5-ton 6×6)</div>
+      <div class="vtab" onclick="switchVehicle('m113',this)">APC M113A2</div>
+      <div class="vtab" onclick="switchVehicle('tatra',this)">Tatra T-813</div>
+      <div class="vtab" onclick="switchVehicle('praga',this)">Praga V3S</div>
+    </div>
+    <div class="vehicle-panels">
+
+      <!-- M-812 -->
+      <div class="vehicle-panel active" id="panel-m812">
+        <div class="veh-img-wrap">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/M812_bridge_truck.jpg/1280px-M812_bridge_truck.jpg" alt="M-812 Military Truck">
+          <div class="veh-img-overlay"></div>
+          <div class="veh-badge">M-812 · 5-Ton 6×6</div>
+        </div>
+        <div class="veh-info">
+          <h3>M-812</h3>
+          <div class="veh-subtitle">AM General · M809 Series · Extra-Long Wheelbase</div>
+          <p>The M-812 is part of the legendary M809 family of 5-ton 6×6 tactical trucks built for the US Armed Forces. Powered by the Cummins NHC-250 diesel engine with 240hp, and paired with a Dana-Spicer 5-speed manual gearbox, it served as a bridge transport truck in military operations worldwide.</p>
+          <div class="veh-specs">
+            <div class="veh-spec"><div class="spec-key">Engine</div><div class="spec-val">Cummins NHC-250 (240hp)</div></div>
+            <div class="veh-spec"><div class="spec-key">Drive</div><div class="spec-val">6×6 All-Wheel Drive</div></div>
+            <div class="veh-spec"><div class="spec-key">Payload</div><div class="spec-val">15,000 lb (6,800 kg)</div></div>
+            <div class="veh-spec"><div class="spec-key">Brakes</div><div class="spec-val">Air Over Hydraulic / Drum</div></div>
+          </div>
+          <div class="veh-parts-label">Available Part Categories</div>
+          <div class="veh-parts-chips">
+            <div class="veh-chip">Engine Overhaul Kit</div>
+            <div class="veh-chip">Transmission</div>
+            <div class="veh-chip">Air Brake System</div>
+            <div class="veh-chip">Winch Assembly</div>
+            <div class="veh-chip">14.00×20 Tires</div>
+            <div class="veh-chip">Pintle Hitch</div>
+            <div class="veh-chip">Transfer Case</div>
+            <div class="veh-chip">Fuel System</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- M113A2 -->
+      <div class="vehicle-panel" id="panel-m113">
+        <div class="veh-img-wrap">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/M113A2_Camp_Shelby.jpg/1280px-M113A2_Camp_Shelby.jpg" alt="M113A2 APC">
+          <div class="veh-img-overlay"></div>
+          <div class="veh-badge">APC M113A2</div>
+        </div>
+        <div class="veh-info">
+          <h3>APC M113A2</h3>
+          <div class="veh-subtitle">FMC Corporation · Armoured Personnel Carrier</div>
+          <p>The M113A2 is one of the most widely used armoured personnel carriers in history. The A2 variant introduced improved cooling, suspension, and an upgraded Detroit Diesel 6V53T engine. It served in over 50 countries and remains in active service, making spare parts availability critical.</p>
+          <div class="veh-specs">
+            <div class="veh-spec"><div class="spec-key">Engine</div><div class="spec-val">Detroit Diesel 6V53T (215hp)</div></div>
+            <div class="veh-spec"><div class="spec-key">Drive</div><div class="spec-val">Tracked · Allison TX-100</div></div>
+            <div class="veh-spec"><div class="spec-key">Armour</div><div class="spec-val">Aluminium Alloy (38mm)</div></div>
+            <div class="veh-spec"><div class="spec-key">Speed</div><div class="spec-val">66 km/h (road)</div></div>
+          </div>
+          <div class="veh-parts-label">Available Part Categories</div>
+          <div class="veh-parts-chips">
+            <div class="veh-chip">6V53T Engine Parts</div>
+            <div class="veh-chip">Track Shoes & Links</div>
+            <div class="veh-chip">Road Wheels</div>
+            <div class="veh-chip">Allison TX-100 Gearbox</div>
+            <div class="veh-chip">Cooling System</div>
+            <div class="veh-chip">Hatch Seals</div>
+            <div class="veh-chip">Hydraulic Ramp</div>
+            <div class="veh-chip">Electrical Harness</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tatra T-813 -->
+      <div class="vehicle-panel" id="panel-tatra">
+        <div class="veh-img-wrap">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Tatra_813_8x8.jpg/1280px-Tatra_813_8x8.jpg" alt="Tatra T-813">
+          <div class="veh-img-overlay"></div>
+          <div class="veh-badge">Tatra T-813 · 8×8</div>
+        </div>
+        <div class="veh-info">
+          <h3>Tatra T-813</h3>
+          <div class="veh-subtitle">Tatra Kopřivnice · Czechoslovak 8×8 Heavy Truck</div>
+          <p>The Tatra T-813 "Kolos" is a legendary Czechoslovak heavy off-road military truck featuring Tatra's signature air-cooled backbone chassis with independent suspension on every axle. Its T-930-3 air-cooled V12 diesel made it uniquely suited to extreme terrain without radiator vulnerability.</p>
+          <div class="veh-specs">
+            <div class="veh-spec"><div class="spec-key">Engine</div><div class="spec-val">Tatra T-930-3 V12 Air-Cooled (250hp)</div></div>
+            <div class="veh-spec"><div class="spec-key">Drive</div><div class="spec-val">8×8 All-Wheel Drive</div></div>
+            <div class="veh-spec"><div class="spec-key">Payload</div><div class="spec-val">12,000 kg</div></div>
+            <div class="veh-spec"><div class="spec-key">Chassis</div><div class="spec-val">Backbone Tube / Ind. Suspension</div></div>
+          </div>
+          <div class="veh-parts-label">Available Part Categories</div>
+          <div class="veh-parts-chips">
+            <div class="veh-chip">T-930-3 Engine Parts</div>
+            <div class="veh-chip">Air-Cooled Cylinder Heads</div>
+            <div class="veh-chip">Fuel Injectors</div>
+            <div class="veh-chip">Backbone Tube Seals</div>
+            <div class="veh-chip">Swing Halfshafts</div>
+            <div class="veh-chip">Differential Lock</div>
+            <div class="veh-chip">PTO Gearbox</div>
+            <div class="veh-chip">Air Compressor</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Praga V3S -->
+      <div class="vehicle-panel" id="panel-praga">
+        <div class="veh-img-wrap">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Praga_V3S_military.jpg/1280px-Praga_V3S_military.jpg" alt="Praga V3S">
+          <div class="veh-img-overlay"></div>
+          <div class="veh-badge">Praga V3S · 6×6</div>
+        </div>
+        <div class="veh-info">
+          <h3>Praga V3S</h3>
+          <div class="veh-subtitle">Praga · Czechoslovak 3-ton 6×6 Tactical Truck</div>
+          <p>The Praga V3S is a Czechoslovak medium tactical truck that became one of the most reliable 6×6 military vehicles of the Cold War era. Its robust Praga RN diesel engine, permanent 6×6 drive, and rugged construction made it a staple of Warsaw Pact and neutral nation armies.</p>
+          <div class="veh-specs">
+            <div class="veh-spec"><div class="spec-key">Engine</div><div class="spec-val">Praga RN 98hp Diesel</div></div>
+            <div class="veh-spec"><div class="spec-key">Drive</div><div class="spec-val">6×6 Permanent AWD</div></div>
+            <div class="veh-spec"><div class="spec-key">Payload</div><div class="spec-val">3,000 kg (on-road)</div></div>
+            <div class="veh-spec"><div class="spec-key">Brakes</div><div class="spec-val">Air-Hydraulic / Drum All Wheels</div></div>
+          </div>
+          <div class="veh-parts-label">Available Part Categories</div>
+          <div class="veh-parts-chips">
+            <div class="veh-chip">Praga RN Engine Spares</div>
+            <div class="veh-chip">Fuel Pump</div>
+            <div class="veh-chip">Brake Master Cylinder</div>
+            <div class="veh-chip">Axle Differentials</div>
+            <div class="veh-chip">Gearbox Synchros</div>
+            <div class="veh-chip">Cab Mounts</div>
+            <div class="veh-chip">Leaf Spring Sets</div>
+            <div class="veh-chip">Steering Box</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end vehicle-panels -->
+  </div><!-- end vehicles-section -->
+
+  <!-- Vehicle-specific parts -->
+  <div class="veh-parts-section">
+    <div class="section-head">
+      <div class="eyebrow">Platform Parts</div>
+      <h2>Top Parts by Vehicle</h2>
+      <p>Most ordered components across all four platforms — click any card to add to cart.</p>
+    </div>
+    <div class="parts-grid-4" style="max-width:1200px;margin:0 auto;">
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Cummins_NTC_engine.jpg/800px-Cummins_NTC_engine.jpg" alt="Cummins">
+          <div class="prod-overlay"></div><div class="prod-badge">M-812</div>
+        </div>
+        <div class="product-info">
+          <div class="prod-cat">Engine · M-812</div>
+          <div class="prod-name">Cummins NHC-250 Piston Set (6-pc)</div>
+          <div class="prod-sku">SKU: RLC-CUM-P6 · M809 Series</div>
+          <div class="prod-price">Rs 96,000</div>
+        </div>
+        <div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/General_Motors_Detroit_Diesel_6V53_engine.jpg/800px-General_Motors_Detroit_Diesel_6V53_engine.jpg" alt="Detroit Diesel">
+          <div class="prod-overlay"></div><div class="prod-badge new">M113A2</div>
+        </div>
+        <div class="product-info">
+          <div class="prod-cat">Engine · M113A2</div>
+          <div class="prod-name">6V53T Turbocharger Assembly OEM</div>
+          <div class="prod-sku">SKU: RLC-6V-TC01 · APC M113A2</div>
+          <div class="prod-price"><span class="old">Rs 72,000</span>Rs 58,500</div>
+        </div>
+        <div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Tatra_engine_T3-930.jpg/800px-Tatra_engine_T3-930.jpg" alt="Tatra Engine">
+          <div class="prod-overlay"></div><div class="prod-badge">Tatra</div>
+        </div>
+        <div class="product-info">
+          <div class="prod-cat">Cylinder · Tatra T-813</div>
+          <div class="prod-name">T-930 V12 Cylinder Head w/ Fins</div>
+          <div class="prod-sku">SKU: RLC-TAT-CH12 · T-813 8×8</div>
+          <div class="prod-price">Rs 34,200</div>
+        </div>
+        <div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Hydraulic_brake_master_cylinder.jpg/800px-Hydraulic_brake_master_cylinder.jpg" alt="Brake">
+          <div class="prod-overlay"></div><div class="prod-badge new">Praga</div>
+        </div>
+        <div class="product-info">
+          <div class="prod-cat">Brake · Praga V3S</div>
+          <div class="prod-name">Praga RN Fuel Injection Pump</div>
+          <div class="prod-sku">SKU: RLC-PRG-FP01 · V3S 6×6</div>
+          <div class="prod-price"><span class="old">Rs 24,000</span>Rs 19,500</div>
+        </div>
+        <div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/M113_APC_2.jpg/800px-M113_APC_2.jpg" alt="M113 Track">
+          <div class="prod-overlay"></div><div class="prod-badge">M113A2</div>
+        </div>
+        <div class="product-info">
+          <div class="prod-cat">Track · M113A2</div>
+          <div class="prod-name">M113 T130E1 Track Shoe (per link)</div>
+          <div class="prod-sku">SKU: RLC-TRK-T130 · APC M113A2</div>
+          <div class="prod-price">Rs 4,800</div>
+        </div>
+        <div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/M812_bridge_truck.jpg/800px-M812_bridge_truck.jpg" alt="M812 Winch">
+          <div class="prod-overlay"></div><div class="prod-badge">M-812</div>
+        </div>
+        <div class="product-info">
+          <div class="prod-cat">Recovery · M-812</div>
+          <div class="prod-name">Front Winch Assembly 20,000 lb</div>
+          <div class="prod-sku">SKU: RLC-WIN-200 · M809 Series</div>
+          <div class="prod-price"><span class="old">Rs 210,000</span>Rs 168,000</div>
+        </div>
+        <div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Tatra_813_8x8.jpg/800px-Tatra_813_8x8.jpg" alt="Tatra">
+          <div class="prod-overlay"></div><div class="prod-badge new">Tatra</div>
+        </div>
+        <div class="product-info">
+          <div class="prod-cat">Suspension · Tatra T-813</div>
+          <div class="prod-name">Tatra Swing Halfshaft Universal Joint</div>
+          <div class="prod-sku">SKU: RLC-TAT-UJ8 · T-813 8×8</div>
+          <div class="prod-price">Rs 12,400</div>
+        </div>
+        <div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Praga_V3S_military.jpg/800px-Praga_V3S_military.jpg" alt="Praga V3S">
+          <div class="prod-overlay"></div><div class="prod-badge">Praga</div>
+        </div>
+        <div class="product-info">
+          <div class="prod-cat">Steering · Praga V3S</div>
+          <div class="prod-name">Praga V3S Steering Box Rebuild Kit</div>
+          <div class="prod-sku">SKU: RLC-PRG-SB01 · V3S 6×6</div>
+          <div class="prod-price">Rs 8,900</div>
+        </div>
+        <div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:36px;"><a class="btn-primary" onclick="showPage('items')">View All 12,000+ Parts →</a></div>
+  </div>
+</div><!-- end vehiclesPage -->
+
+<!-- ════════════════ STOCKS PAGE ════════════════ -->
 <div id="stocksPage" class="stocks-page">
   <div class="page-header">
-    <div class="breadcrumb">
-      <a href="#" onclick="showPage('home')">Home</a>
-      <span>›</span>
-      <span style="color:#fff;">Stock Availability</span>
-    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Home</a><span>›</span><span style="color:#fff;">Stock Availability</span></div>
     <h1>Live Stock <span style="color:var(--amber);">Availability</span></h1>
-    <p>Real-time inventory levels across all RELCO branches. Last updated: Today, 10:45 AM</p>
+    <p>Real-time inventory across all RELCO branches. Covering M-812, M113A2, Tatra T-813, Praga V3S and allied platforms.</p>
   </div>
   <div class="stocks-content">
     <div class="stock-controls">
-      <input class="stock-search" type="text" placeholder="🔍 Search by part name, SKU, or vehicle...">
-      <select class="stock-select">
-        <option>All Categories</option>
-        <option>Engine Parts</option>
-        <option>Brake System</option>
-        <option>Electrical</option>
-        <option>Filters</option>
-        <option>Suspension</option>
-        <option>Cooling</option>
-      </select>
-      <select class="stock-select">
-        <option>All Branches</option>
-        <option>Lahore – Main</option>
-        <option>Karachi</option>
-        <option>Islamabad</option>
-        <option>Faisalabad</option>
-      </select>
-      <select class="stock-select">
-        <option>All Status</option>
-        <option>In Stock</option>
-        <option>Low Stock</option>
-        <option>Out of Stock</option>
-      </select>
-      <a href="#" class="btn-primary" style="white-space:nowrap;">Export CSV</a>
+      <input class="stock-search" type="text" placeholder="🔍 Search by part name, SKU, NSN, or vehicle...">
+      <select class="stock-select"><option>All Platforms</option><option>M-812 (5-ton 6×6)</option><option>APC M113A2</option><option>Tatra T-813</option><option>Praga V3S</option></select>
+      <select class="stock-select"><option>All Categories</option><option>Engine Parts</option><option>Brake System</option><option>Track / Wheels</option><option>Electrical</option><option>Suspension</option></select>
+      <select class="stock-select"><option>All Branches</option><option>Lahore – Main</option><option>Karachi</option><option>Islamabad</option><option>Faisalabad</option></select>
+      <a class="btn-primary" style="white-space:nowrap;">Export CSV</a>
     </div>
     <table class="stock-table">
-      <thead>
-        <tr>
-          <th>SKU</th>
-          <th>Part Name</th>
-          <th>Category</th>
-          <th>Fitment</th>
-          <th>Branch</th>
-          <th>Qty</th>
-          <th>Unit Price</th>
-          <th>Status</th>
-          <th></th>
-        </tr>
-      </thead>
+      <thead><tr><th>SKU / NSN</th><th>Part Name</th><th>Platform</th><th>Category</th><th>Qty</th><th>Unit Price</th><th>Status</th><th></th></tr></thead>
       <tbody>
-        <tr>
-          <td class="sku">RLC-OF-2241</td>
-          <td><strong>Heavy-Duty Oil Filter Pro Series</strong></td>
-          <td>Filters</td>
-          <td>Toyota Corolla 2018–2024</td>
-          <td>Lahore – Main</td>
-          <td>247</td>
-          <td class="stock-price">Rs 1,950</td>
-          <td><span class="stock-status in-stock">In Stock</span></td>
-          <td><button class="btn-cart" style="padding:7px 14px;font-size:11px;white-space:nowrap;">Add to Cart</button></td>
-        </tr>
-        <tr>
-          <td class="sku">RLC-BP-0445</td>
-          <td><strong>Ceramic Brake Pad Set – Front Axle</strong></td>
-          <td>Brake System</td>
-          <td>Honda Civic 2016–2023</td>
-          <td>Lahore – Main</td>
-          <td>89</td>
-          <td class="stock-price">Rs 4,200</td>
-          <td><span class="stock-status in-stock">In Stock</span></td>
-          <td><button class="btn-cart" style="padding:7px 14px;font-size:11px;white-space:nowrap;">Add to Cart</button></td>
-        </tr>
-        <tr>
-          <td class="sku">RLC-ALT-7701</td>
-          <td><strong>OEM Alternator 120A – Universal Fit</strong></td>
-          <td>Electrical</td>
-          <td>Suzuki Cultus / Alto</td>
-          <td>Karachi</td>
-          <td>12</td>
-          <td class="stock-price">Rs 14,500</td>
-          <td><span class="stock-status low-stock">Low Stock</span></td>
-          <td><button class="btn-cart" style="padding:7px 14px;font-size:11px;white-space:nowrap;">Add to Cart</button></td>
-        </tr>
-        <tr>
-          <td class="sku">RLC-TBK-3312</td>
-          <td><strong>Timing Belt Kit with Tensioner</strong></td>
-          <td>Engine Parts</td>
-          <td>Toyota Yaris / Vitz 2014–2022</td>
-          <td>Islamabad</td>
-          <td>55</td>
-          <td class="stock-price">Rs 7,200</td>
-          <td><span class="stock-status in-stock">In Stock</span></td>
-          <td><button class="btn-cart" style="padding:7px 14px;font-size:11px;white-space:nowrap;">Add to Cart</button></td>
-        </tr>
-        <tr>
-          <td class="sku">RLC-SH-8823</td>
-          <td><strong>Shock Absorber Rear – Gas Charged</strong></td>
-          <td>Suspension</td>
-          <td>KIA Sportage 2019–2024</td>
-          <td>Lahore – Main</td>
-          <td>34</td>
-          <td class="stock-price">Rs 11,000</td>
-          <td><span class="stock-status in-stock">In Stock</span></td>
-          <td><button class="btn-cart" style="padding:7px 14px;font-size:11px;white-space:nowrap;">Add to Cart</button></td>
-        </tr>
-        <tr>
-          <td class="sku">RLC-RAD-1102</td>
-          <td><strong>Aluminium Radiator – Heavy Duty</strong></td>
-          <td>Cooling</td>
-          <td>Hyundai Tucson 2016–2020</td>
-          <td>Faisalabad</td>
-          <td>0</td>
-          <td class="stock-price">Rs 22,000</td>
-          <td><span class="stock-status out-stock">Out of Stock</span></td>
-          <td><button style="padding:7px 14px;font-size:11px;background:var(--navy3);color:var(--gray);border:1px solid rgba(255,255,255,0.1);border-radius:4px;cursor:pointer;white-space:nowrap;">Notify Me</button></td>
-        </tr>
-        <tr>
-          <td class="sku">RLC-AC-5560</td>
-          <td><strong>AC Compressor – OEM Grade</strong></td>
-          <td>Electrical</td>
-          <td>Honda BRV / HRV 2017–2023</td>
-          <td>Karachi</td>
-          <td>8</td>
-          <td class="stock-price">Rs 38,500</td>
-          <td><span class="stock-status low-stock">Low Stock</span></td>
-          <td><button class="btn-cart" style="padding:7px 14px;font-size:11px;white-space:nowrap;">Add to Cart</button></td>
-        </tr>
-        <tr>
-          <td class="sku">RLC-WP-0091</td>
-          <td><strong>Water Pump – OEM Replacement</strong></td>
-          <td>Cooling</td>
-          <td>Toyota Fortuner 2016–2024</td>
-          <td>Lahore – Main</td>
-          <td>61</td>
-          <td class="stock-price">Rs 5,800</td>
-          <td><span class="stock-status in-stock">In Stock</span></td>
-          <td><button class="btn-cart" style="padding:7px 14px;font-size:11px;white-space:nowrap;">Add to Cart</button></td>
-        </tr>
-        <tr>
-          <td class="sku">RLC-EGR-3341</td>
-          <td><strong>EGR Valve – Direct Fit</strong></td>
-          <td>Engine Parts</td>
-          <td>Suzuki Swift 2017–2023</td>
-          <td>Islamabad</td>
-          <td>27</td>
-          <td class="stock-price">Rs 8,400</td>
-          <td><span class="stock-status in-stock">In Stock</span></td>
-          <td><button class="btn-cart" style="padding:7px 14px;font-size:11px;white-space:nowrap;">Add to Cart</button></td>
-        </tr>
-        <tr>
-          <td class="sku">RLC-DS-7712</td>
-          <td><strong>Disc Brake Rotor – Drilled & Slotted</strong></td>
-          <td>Brake System</td>
-          <td>Changan Alsvin 2020–2024</td>
-          <td>Lahore – Main</td>
-          <td>3</td>
-          <td class="stock-price">Rs 6,200</td>
-          <td><span class="stock-status low-stock">Low Stock</span></td>
-          <td><button class="btn-cart" style="padding:7px 14px;font-size:11px;white-space:nowrap;">Add to Cart</button></td>
-        </tr>
+        <tr><td class="sku">RLC-CUM-2241</td><td><strong>Cummins NHC-250 Rebuild Kit</strong></td><td>M-812</td><td>Engine</td><td>14</td><td class="stock-price">Rs 142,000</td><td><span class="stock-status low-stock">Low Stock</span></td><td><button class="btn-cart btn-sm-cart">Add to Cart</button></td></tr>
+        <tr><td class="sku">RLC-DD-0445</td><td><strong>Detroit Diesel 6V53T Head Gasket Set</strong></td><td>APC M113A2</td><td>Engine</td><td>63</td><td class="stock-price">Rs 28,500</td><td><span class="stock-status in-stock">In Stock</span></td><td><button class="btn-cart btn-sm-cart">Add to Cart</button></td></tr>
+        <tr><td class="sku">RLC-TAT-7701</td><td><strong>Tatra T-930 Fuel Injectors (Set/12)</strong></td><td>Tatra T-813</td><td>Fuel System</td><td>8</td><td class="stock-price">Rs 48,500</td><td><span class="stock-status low-stock">Low Stock</span></td><td><button class="btn-cart btn-sm-cart">Add to Cart</button></td></tr>
+        <tr><td class="sku">RLC-PRG-3312</td><td><strong>Praga V3S Brake Master Cylinder</strong></td><td>Praga V3S</td><td>Brake</td><td>29</td><td class="stock-price">Rs 18,200</td><td><span class="stock-status in-stock">In Stock</span></td><td><button class="btn-cart btn-sm-cart">Add to Cart</button></td></tr>
+        <tr><td class="sku">RLC-TRK-T130</td><td><strong>M113 T130E1 Track Shoe (per link)</strong></td><td>APC M113A2</td><td>Track System</td><td>240</td><td class="stock-price">Rs 4,800</td><td><span class="stock-status in-stock">In Stock</span></td><td><button class="btn-cart btn-sm-cart">Add to Cart</button></td></tr>
+        <tr><td class="sku">RLC-WIN-200</td><td><strong>Front Winch Assembly 20,000 lb</strong></td><td>M-812</td><td>Recovery</td><td>0</td><td class="stock-price">Rs 168,000</td><td><span class="stock-status out-stock">Out of Stock</span></td><td><button class="btn-notify">Notify Me</button></td></tr>
+        <tr><td class="sku">RLC-TAT-CH12</td><td><strong>T-930 V12 Cylinder Head with Fins</strong></td><td>Tatra T-813</td><td>Engine</td><td>6</td><td class="stock-price">Rs 34,200</td><td><span class="stock-status low-stock">Low Stock</span></td><td><button class="btn-cart btn-sm-cart">Add to Cart</button></td></tr>
+        <tr><td class="sku">RLC-PRG-SB01</td><td><strong>Praga V3S Steering Box Rebuild Kit</strong></td><td>Praga V3S</td><td>Steering</td><td>17</td><td class="stock-price">Rs 8,900</td><td><span class="stock-status in-stock">In Stock</span></td><td><button class="btn-cart btn-sm-cart">Add to Cart</button></td></tr>
+        <tr><td class="sku">RLC-6V-TC01</td><td><strong>6V53T Turbocharger Assembly OEM</strong></td><td>APC M113A2</td><td>Engine</td><td>4</td><td class="stock-price">Rs 58,500</td><td><span class="stock-status low-stock">Low Stock</span></td><td><button class="btn-cart btn-sm-cart">Add to Cart</button></td></tr>
+        <tr><td class="sku">RLC-CUM-P6</td><td><strong>Cummins NHC-250 Piston Set (6-pc)</strong></td><td>M-812</td><td>Engine</td><td>22</td><td class="stock-price">Rs 96,000</td><td><span class="stock-status in-stock">In Stock</span></td><td><button class="btn-cart btn-sm-cart">Add to Cart</button></td></tr>
+        <tr><td class="sku">RLC-TAT-UJ8</td><td><strong>Tatra Swing Halfshaft Universal Joint</strong></td><td>Tatra T-813</td><td>Suspension</td><td>34</td><td class="stock-price">Rs 12,400</td><td><span class="stock-status in-stock">In Stock</span></td><td><button class="btn-cart btn-sm-cart">Add to Cart</button></td></tr>
+        <tr><td class="sku">RLC-PRG-FP01</td><td><strong>Praga RN Fuel Injection Pump</strong></td><td>Praga V3S</td><td>Fuel System</td><td>0</td><td class="stock-price">Rs 19,500</td><td><span class="stock-status out-stock">Out of Stock</span></td><td><button class="btn-notify">Notify Me</button></td></tr>
       </tbody>
     </table>
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;color:var(--gray);font-size:13px;">
-      <span>Showing 10 of 12,000+ parts</span>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;color:var(--gray);font-size:13px;flex-wrap:wrap;gap:12px;">
+      <span>Showing 12 of 12,000+ parts</span>
       <div style="display:flex;gap:8px;">
-        <button style="padding:8px 16px;background:var(--card-bg);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;cursor:pointer;">← Prev</button>
-        <button style="padding:8px 16px;background:var(--amber);border:none;border-radius:4px;color:var(--navy);font-weight:700;cursor:pointer;">1</button>
-        <button style="padding:8px 16px;background:var(--card-bg);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;cursor:pointer;">2</button>
-        <button style="padding:8px 16px;background:var(--card-bg);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;cursor:pointer;">3</button>
-        <button style="padding:8px 16px;background:var(--card-bg);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;cursor:pointer;">Next →</button>
+        <button class="pager-btn">← Prev</button>
+        <button class="pager-btn active">1</button>
+        <button class="pager-btn">2</button>
+        <button class="pager-btn">3</button>
+        <button class="pager-btn">Next →</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════ ITEMS PAGE ═══════════════════ -->
+<!-- ════════════════ ITEMS PAGE ════════════════ -->
 <div id="itemsPage" class="items-page">
   <div class="page-header">
-    <div class="breadcrumb">
-      <a href="#" onclick="showPage('home')">Home</a>
-      <span>›</span>
-      <span style="color:#fff;">All Items</span>
-    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Home</a><span>›</span><span style="color:#fff;">All Items</span></div>
     <h1>Parts <span style="color:var(--amber);">Catalogue</span></h1>
-    <p>Browse 12,000+ parts across all categories — OEM, aftermarket, and rebuild-grade components.</p>
+    <p>Browse 12,000+ parts across M-812, APC M113A2, Tatra T-813, Praga V3S and allied platforms.</p>
   </div>
   <div class="items-grid">
-    <!-- Filter Sidebar -->
     <div class="filter-panel">
       <div class="filter-title">⚙ Filters</div>
       <div class="filter-group">
-        <div class="filter-group-title">Category</div>
-        <label class="filter-check"><input type="checkbox" checked> <label>Engine Parts (3,204)</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Brake System (1,887)</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Electrical (2,110)</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Filters (940)</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Suspension (1,320)</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Cooling (780)</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Transmission (1,100)</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Exhaust (660)</label></label>
+        <div class="filter-group-title">Platform</div>
+        <label class="filter-check"><input type="checkbox" checked><label>M-812 (3,204)</label></label>
+        <label class="filter-check"><input type="checkbox" checked><label>APC M113A2 (2,887)</label></label>
+        <label class="filter-check"><input type="checkbox" checked><label>Tatra T-813 (2,110)</label></label>
+        <label class="filter-check"><input type="checkbox" checked><label>Praga V3S (1,940)</label></label>
+        <label class="filter-check"><input type="checkbox"><label>Other Allied (1,859)</label></label>
       </div>
       <div class="filter-group">
-        <div class="filter-group-title">Brand Fitment</div>
-        <label class="filter-check"><input type="checkbox" checked> <label>Toyota</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Honda</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Suzuki</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>KIA</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Hyundai</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Changan</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Proton</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>MG</label></label>
+        <div class="filter-group-title">Category</div>
+        <label class="filter-check"><input type="checkbox" checked><label>Engine Parts</label></label>
+        <label class="filter-check"><input type="checkbox"><label>Brake System</label></label>
+        <label class="filter-check"><input type="checkbox"><label>Track / Wheels</label></label>
+        <label class="filter-check"><input type="checkbox"><label>Electrical</label></label>
+        <label class="filter-check"><input type="checkbox"><label>Suspension</label></label>
+        <label class="filter-check"><input type="checkbox"><label>Fuel System</label></label>
+        <label class="filter-check"><input type="checkbox"><label>Steering</label></label>
+        <label class="filter-check"><input type="checkbox"><label>Transmission</label></label>
       </div>
       <div class="filter-group">
         <div class="filter-group-title">Price Range (PKR)</div>
-        <input type="range" class="filter-range" min="0" max="100000" value="50000">
-        <div style="display:flex;justify-content:space-between;color:var(--gray);font-size:12px;margin-top:6px;">
-          <span>Rs 0</span><span>Rs 50,000</span>
-        </div>
+        <input type="range" class="filter-range" min="0" max="300000" value="150000">
+        <div style="display:flex;justify-content:space-between;color:var(--gray);font-size:12px;margin-top:6px;"><span>Rs 0</span><span>Rs 150,000</span></div>
       </div>
       <div class="filter-group">
         <div class="filter-group-title">Availability</div>
-        <label class="filter-check"><input type="checkbox" checked> <label>In Stock</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Low Stock</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Pre-order</label></label>
+        <label class="filter-check"><input type="checkbox" checked><label>In Stock</label></label>
+        <label class="filter-check"><input type="checkbox"><label>Low Stock</label></label>
+        <label class="filter-check"><input type="checkbox"><label>Pre-order</label></label>
       </div>
       <div class="filter-group">
         <div class="filter-group-title">Part Type</div>
-        <label class="filter-check"><input type="checkbox" checked> <label>OEM Genuine</label></label>
-        <label class="filter-check"><input type="checkbox" checked> <label>Aftermarket</label></label>
-        <label class="filter-check"><input type="checkbox"> <label>Rebuild Kit</label></label>
+        <label class="filter-check"><input type="checkbox" checked><label>OEM Genuine</label></label>
+        <label class="filter-check"><input type="checkbox" checked><label>Aftermarket</label></label>
+        <label class="filter-check"><input type="checkbox"><label>Rebuild Kit</label></label>
       </div>
       <button class="btn-cart" style="width:100%;margin-top:8px;">Apply Filters</button>
     </div>
-
-    <!-- Items -->
-    <div class="items-content">
+    <div>
       <div class="items-header">
-        <span class="items-count">Showing <strong style="color:#fff;">48</strong> of 12,000+ parts</span>
+        <span class="items-count">Showing <strong style="color:#fff;">12</strong> of 12,000+ parts</span>
         <div style="display:flex;gap:12px;align-items:center;">
           <input type="text" placeholder="🔍 Search parts..." class="stock-search" style="width:220px;">
-          <select class="items-sort">
-            <option>Sort: Featured</option>
-            <option>Price: Low to High</option>
-            <option>Price: High to Low</option>
-            <option>Newest First</option>
-            <option>Best Selling</option>
-          </select>
+          <select class="items-sort"><option>Sort: Featured</option><option>Price: Low→High</option><option>Price: High→Low</option><option>Newest First</option></select>
         </div>
       </div>
       <div class="items-list">
+        <div class="product-card"><div class="product-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Cummins_NTC_engine.jpg/800px-Cummins_NTC_engine.jpg" alt=""><div class="prod-overlay"></div><div class="prod-badge">M-812</div></div><div class="product-info"><div class="prod-cat">Engine · M-812</div><div class="prod-name">Cummins NHC-250 Rebuild Kit</div><div class="prod-sku">SKU: RLC-CUM-2241</div><div class="prod-price"><span class="old">Rs 185,000</span>Rs 142,000</div></div><div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div></div>
 
-        <!-- 9 product cards -->
-        <div class="product-card">
-          <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?w=300" alt="">
-            <div class="prod-overlay"></div>
-            <div class="prod-badge new">New</div>
-          </div>
-          <div class="product-info">
-            <div class="prod-cat">Filters</div>
-            <div class="prod-name">Heavy-Duty Oil Filter Pro Series</div>
-            <div class="prod-sku">SKU: RLC-OF-2241 · Toyota Corolla</div>
-            <div class="prod-price"><span class="old">Rs 2,800</span>Rs 1,950</div>
-          </div>
-          <div class="prod-footer">
-            <button class="btn-cart">Add to Cart</button>
-            <div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          </div>
-        </div>
+        <div class="product-card"><div class="product-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/General_Motors_Detroit_Diesel_6V53_engine.jpg/800px-General_Motors_Detroit_Diesel_6V53_engine.jpg" alt=""><div class="prod-overlay"></div><div class="prod-badge new">M113A2</div></div><div class="product-info"><div class="prod-cat">Engine · M113A2</div><div class="prod-name">6V53T Head Gasket Set</div><div class="prod-sku">SKU: RLC-DD-0445</div><div class="prod-price">Rs 28,500</div></div><div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div></div>
 
-        <div class="product-card">
-          <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=300" alt="">
-            <div class="prod-overlay"></div>
-          </div>
-          <div class="product-info">
-            <div class="prod-cat">Brake System</div>
-            <div class="prod-name">Ceramic Brake Pad Set – Front Axle</div>
-            <div class="prod-sku">SKU: RLC-BP-0445 · Honda Civic</div>
-            <div class="prod-price">Rs 4,200</div>
-          </div>
-          <div class="prod-footer">
-            <button class="btn-cart">Add to Cart</button>
-            <div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          </div>
-        </div>
+        <div class="product-card"><div class="product-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Tatra_engine_T3-930.jpg/800px-Tatra_engine_T3-930.jpg" alt=""><div class="prod-overlay"></div><div class="prod-badge">Tatra</div></div><div class="product-info"><div class="prod-cat">Fuel System · Tatra T-813</div><div class="prod-name">T-930 Injectors (Set/12)</div><div class="prod-sku">SKU: RLC-TAT-7701</div><div class="prod-price"><span class="old">Rs 62,000</span>Rs 48,500</div></div><div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div></div>
 
-        <div class="product-card">
-          <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300" alt="">
-            <div class="prod-overlay"></div>
-            <div class="prod-badge">Sale</div>
-          </div>
-          <div class="product-info">
-            <div class="prod-cat">Electrical</div>
-            <div class="prod-name">OEM Alternator 120A</div>
-            <div class="prod-sku">SKU: RLC-ALT-7701 · Suzuki Cultus</div>
-            <div class="prod-price"><span class="old">Rs 18,000</span>Rs 14,500</div>
-          </div>
-          <div class="prod-footer">
-            <button class="btn-cart">Add to Cart</button>
-            <div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          </div>
-        </div>
+        <div class="product-card"><div class="product-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Hydraulic_brake_master_cylinder.jpg/800px-Hydraulic_brake_master_cylinder.jpg" alt=""><div class="prod-overlay"></div><div class="prod-badge new">Praga</div></div><div class="product-info"><div class="prod-cat">Brake · Praga V3S</div><div class="prod-name">Air-Hydraulic Brake Master Cylinder</div><div class="prod-sku">SKU: RLC-PRG-3312</div><div class="prod-price">Rs 18,200</div></div><div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div></div>
 
-        <div class="product-card">
-          <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=300" alt="">
-            <div class="prod-overlay"></div>
-          </div>
-          <div class="product-info">
-            <div class="prod-cat">Engine Parts</div>
-            <div class="prod-name">Timing Belt Kit with Tensioner</div>
-            <div class="prod-sku">SKU: RLC-TBK-3312 · Toyota Yaris</div>
-            <div class="prod-price"><span class="old">Rs 9,500</span>Rs 7,200</div>
-          </div>
-          <div class="prod-footer">
-            <button class="btn-cart">Add to Cart</button>
-            <div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          </div>
-        </div>
+        <div class="product-card"><div class="product-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/M113_APC_2.jpg/800px-M113_APC_2.jpg" alt=""><div class="prod-overlay"></div><div class="prod-badge">M113A2</div></div><div class="product-info"><div class="prod-cat">Track · M113A2</div><div class="prod-name">T130E1 Track Shoe (per link)</div><div class="prod-sku">SKU: RLC-TRK-T130</div><div class="prod-price">Rs 4,800</div></div><div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div></div>
 
-        <div class="product-card">
-          <div class="product-img" style="background:var(--navy3);">
-            <img src="https://images.unsplash.com/photo-1565043673833-5898c7498e05?w=300" alt="">
-            <div class="prod-overlay"></div>
-            <div class="prod-badge new">New</div>
-          </div>
-          <div class="product-info">
-            <div class="prod-cat">Suspension</div>
-            <div class="prod-name">Shock Absorber Rear – Gas Charged</div>
-            <div class="prod-sku">SKU: RLC-SH-8823 · KIA Sportage</div>
-            <div class="prod-price">Rs 11,000</div>
-          </div>
-          <div class="prod-footer">
-            <button class="btn-cart">Add to Cart</button>
-            <div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          </div>
-        </div>
+        <div class="product-card"><div class="product-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Tatra_813_8x8.jpg/800px-Tatra_813_8x8.jpg" alt=""><div class="prod-overlay"></div><div class="prod-badge">Tatra</div></div><div class="product-info"><div class="prod-cat">Suspension · Tatra T-813</div><div class="prod-name">Swing Halfshaft Universal Joint</div><div class="prod-sku">SKU: RLC-TAT-UJ8</div><div class="prod-price">Rs 12,400</div></div><div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div></div>
 
-        <div class="product-card">
-          <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=300" alt="">
-            <div class="prod-overlay"></div>
-            <div class="prod-badge">Sale</div>
-          </div>
-          <div class="product-info">
-            <div class="prod-cat">Cooling</div>
-            <div class="prod-name">Aluminium Radiator – Heavy Duty</div>
-            <div class="prod-sku">SKU: RLC-RAD-1102 · Hyundai Tucson</div>
-            <div class="prod-price"><span class="old">Rs 25,000</span>Rs 22,000</div>
-          </div>
-          <div class="prod-footer">
-            <button class="btn-cart">Add to Cart</button>
-            <div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          </div>
-        </div>
+        <div class="product-card"><div class="product-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/M812_bridge_truck.jpg/800px-M812_bridge_truck.jpg" alt=""><div class="prod-overlay"></div><div class="prod-badge">M-812</div></div><div class="product-info"><div class="prod-cat">Recovery · M-812</div><div class="prod-name">Front Winch Assembly 20,000 lb</div><div class="prod-sku">SKU: RLC-WIN-200</div><div class="prod-price"><span class="old">Rs 210,000</span>Rs 168,000</div></div><div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div></div>
 
-        <div class="product-card">
-          <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1581090124790-b1c8d56697a9?w=300" alt="">
-            <div class="prod-overlay"></div>
-          </div>
-          <div class="product-info">
-            <div class="prod-cat">Electrical</div>
-            <div class="prod-name">AC Compressor – OEM Grade</div>
-            <div class="prod-sku">SKU: RLC-AC-5560 · Honda BRV</div>
-            <div class="prod-price">Rs 38,500</div>
-          </div>
-          <div class="prod-footer">
-            <button class="btn-cart">Add to Cart</button>
-            <div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          </div>
-        </div>
+        <div class="product-card"><div class="product-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Praga_V3S_military.jpg/800px-Praga_V3S_military.jpg" alt=""><div class="prod-overlay"></div><div class="prod-badge new">Praga</div></div><div class="product-info"><div class="prod-cat">Steering · Praga V3S</div><div class="prod-name">Steering Box Rebuild Kit</div><div class="prod-sku">SKU: RLC-PRG-SB01</div><div class="prod-price">Rs 8,900</div></div><div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div></div>
 
-        <div class="product-card">
-          <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=300" alt="">
-            <div class="prod-overlay"></div>
-            <div class="prod-badge new">New</div>
-          </div>
-          <div class="product-info">
-            <div class="prod-cat">Engine Parts</div>
-            <div class="prod-name">EGR Valve – Direct Fit</div>
-            <div class="prod-sku">SKU: RLC-EGR-3341 · Suzuki Swift</div>
-            <div class="prod-price">Rs 8,400</div>
-          </div>
-          <div class="prod-footer">
-            <button class="btn-cart">Add to Cart</button>
-            <div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?w=300" alt="">
-            <div class="prod-overlay"></div>
-            <div class="prod-badge">Sale</div>
-          </div>
-          <div class="product-info">
-            <div class="prod-cat">Brake System</div>
-            <div class="prod-name">Disc Brake Rotor – Drilled & Slotted</div>
-            <div class="prod-sku">SKU: RLC-DS-7712 · Changan Alsvin</div>
-            <div class="prod-price"><span class="old">Rs 7,500</span>Rs 6,200</div>
-          </div>
-          <div class="prod-footer">
-            <button class="btn-cart">Add to Cart</button>
-            <div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          </div>
-        </div>
-
+        <div class="product-card"><div class="product-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/M113A2_Camp_Shelby.jpg/800px-M113A2_Camp_Shelby.jpg" alt=""><div class="prod-overlay"></div><div class="prod-badge">M113A2</div></div><div class="product-info"><div class="prod-cat">Engine · M113A2</div><div class="prod-name">6V53T Turbocharger Assembly OEM</div><div class="prod-sku">SKU: RLC-6V-TC01</div><div class="prod-price"><span class="old">Rs 72,000</span>Rs 58,500</div></div><div class="prod-footer"><button class="btn-cart">Add to Cart</button><div class="btn-wish"><svg viewBox="0 0 24 24" fill="none" stroke="#8a9ab5" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div></div>
       </div>
-      <!-- Pagination -->
       <div style="display:flex;justify-content:center;gap:8px;margin-top:36px;">
-        <button style="padding:10px 18px;background:var(--card-bg);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;cursor:pointer;">← Prev</button>
-        <button style="padding:10px 18px;background:var(--amber);border:none;border-radius:4px;color:var(--navy);font-weight:700;cursor:pointer;">1</button>
-        <button style="padding:10px 18px;background:var(--card-bg);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;cursor:pointer;">2</button>
-        <button style="padding:10px 18px;background:var(--card-bg);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;cursor:pointer;">3</button>
-        <button style="padding:10px 18px;background:var(--card-bg);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;cursor:pointer;">...</button>
-        <button style="padding:10px 18px;background:var(--card-bg);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:#fff;cursor:pointer;">Next →</button>
+        <button class="pager-btn">← Prev</button>
+        <button class="pager-btn active">1</button>
+        <button class="pager-btn">2</button>
+        <button class="pager-btn">3</button>
+        <button class="pager-btn">Next →</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- FOOTER (shared) -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="brand-name">RELCO</div>
       <div class="brand-tag">International LLC</div>
-      <p>Pakistan's trusted auto parts supplier. Quality-certified OEM and aftermarket components delivered fast — serving workshops, dealers, and fleets since 1998.</p>
+      <p>Pakistan's specialist supplier for M-812, APC M113A2, Tatra T-813, and Praga V3S parts. Quality-certified components, ready inventory, fast dispatch since 1998.</p>
       <div class="footer-contact">
         <p><strong>RELCO International LLC</strong></p>
         <p>Plot 45, Industrial Zone, Lahore, Pakistan</p>
-        <p>Phone: +92 300 000 0000</p>
-        <p>Fax: +92 300 000 0001</p>
+        <p>Phone: +92 300 000 0000 · Fax: +92 300 000 0001</p>
         <p>Email: info@relcointl.com</p>
       </div>
     </div>
     <div class="footer-col">
       <h4>Navigate</h4>
-      <a href="#" onclick="showPage('home')">Home</a>
-      <a href="#" onclick="showPage('items')">All Items</a>
-      <a href="#" onclick="showPage('stocks')">Stock Availability</a>
-      <a href="#about" onclick="showPage('home')">About Us</a>
-      <a href="#services" onclick="showPage('home')">Services</a>
-      <a href="#contact" onclick="showPage('home')">Contact</a>
+      <a onclick="showPage('home')">Home</a>
+      <a onclick="showPage('vehicles')">Vehicle Platforms</a>
+      <a onclick="showPage('items')">All Items</a>
+      <a onclick="showPage('stocks')">Stock Availability</a>
+      <a onclick="showPage('home')">About Us</a>
+      <a onclick="showPage('home')">Contact</a>
     </div>
     <div class="footer-col">
-      <h4>Categories</h4>
-      <a href="#">Engine Parts</a>
-      <a href="#">Brake Systems</a>
-      <a href="#">Electrical</a>
-      <a href="#">Filters</a>
-      <a href="#">Suspension</a>
-      <a href="#">Cooling System</a>
-      <a href="#">Transmission</a>
+      <h4>Platforms</h4>
+      <a onclick="showPage('vehicles')">M-812 (5-Ton 6×6)</a>
+      <a onclick="showPage('vehicles')">APC M113A2</a>
+      <a onclick="showPage('vehicles')">Tatra T-813</a>
+      <a onclick="showPage('vehicles')">Praga V3S</a>
+      <a onclick="showPage('vehicles')">Allied Platforms</a>
     </div>
     <div class="footer-col">
       <h4>Support</h4>
       <a href="#">Get a Quote</a>
-      <a href="#">Fitment Guide</a>
+      <a href="#">NSN Cross-Reference</a>
+      <a href="#">TM Manuals</a>
       <a href="#">Warranty Policy</a>
-      <a href="#">Return Policy</a>
       <a href="#">Track Order</a>
-      <a href="#">Bulk Orders</a>
-      <a href="#">Dealer Program</a>
+      <a href="#">Bulk / Gov. Orders</a>
     </div>
   </div>
   <div class="footer-bottom">
     <p>©2026 RELCO International LLC. All rights reserved.</p>
-    <p>ISO 9001 Certified · AS9100D Compliant</p>
+    <p>ISO 9001 Certified · AS9100D Compliant · Serving Defence Since 1998</p>
   </div>
 </footer>
 
 <script>
+// ── PAGE ROUTING ──
+const pages = { main:'mainPage', vehicles:'vehiclesPage', stocks:'stocksPage', items:'itemsPage' };
 function showPage(page, navEl) {
-  document.getElementById('mainPage').classList.remove('hidden');
-  document.getElementById('stocksPage').classList.remove('visible');
-  document.getElementById('itemsPage').classList.remove('visible');
-
-  if (page === 'stocks') {
-    document.getElementById('mainPage').classList.add('hidden');
-    document.getElementById('stocksPage').classList.add('visible');
-  } else if (page === 'items') {
-    document.getElementById('mainPage').classList.add('hidden');
-    document.getElementById('itemsPage').classList.add('visible');
-  }
-
-  // nav active state
+  Object.values(pages).forEach(id => {
+    const el = document.getElementById(id);
+    if(el) { el.style.display='none'; el.classList.remove('visible'); }
+  });
+  const target = page==='home' ? 'main' : page;
+  const el = document.getElementById(pages[target]);
+  if(el) { el.style.display='block'; el.classList.add('visible'); }
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  if (navEl) navEl.classList.add('active');
-
+  if(navEl) navEl.classList.add('active');
   window.scrollTo({top:0, behavior:'smooth'});
-  return false;
+}
+// init
+document.getElementById('mainPage').style.display='block';
+
+// ── HERO SLIDER ──
+const slides = [
+  { img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/M812_bridge_truck.jpg/1280px-M812_bridge_truck.jpg', tag:'M-812 · 5-Ton 6×6 Tactical Truck', title:'Parts for <span style="color:var(--amber)">M-812</span><br>& M809 Series', desc:'Cummins NHC-250 engine kits, Dana-Spicer transmissions, winch assemblies and all consumables for the legendary 5-ton 6×6.' },
+  { img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/M113A2_Camp_Shelby.jpg/1280px-M113A2_Camp_Shelby.jpg', tag:'APC M113A2 · Armoured Personnel Carrier', title:'Sustaining the <span style="color:var(--amber)">M113A2</span><br>Fleet', desc:'Detroit Diesel 6V53T parts, Allison TX-100 gearbox components, track shoes, road wheels and full rebuild kits.' },
+  { img:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Tatra_813_8x8.jpg/1280px-Tatra_813_8x8.jpg', tag:'Tatra T-813 · 8×8 Heavy Off-Road Truck', title:'<span style="color:var(--amber)">Tatra T-813</span><br>Kolos Parts', desc:'T-930 V12 air-cooled engine components, backbone chassis seals, swing halfshafts, differentials and PTO assemblies.' },
+  { img:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Praga_V3S_military.jpg/1280px-Praga_V3S_military.jpg', tag:'Praga V3S · 6×6 Tactical Truck', title:'<span style="color:var(--amber)">Praga V3S</span><br>Parts & Rebuild Kits', desc:'Praga RN engine spares, fuel injection pumps, steering boxes, axle differentials and complete overhaul kits.' }
+];
+let currentSlide = 0, slideTimer;
+function setSlide(i) {
+  currentSlide = i;
+  const s = slides[i];
+  const bg = document.getElementById('heroBg');
+  bg.style.opacity='0';
+  setTimeout(()=>{ bg.style.backgroundImage=`url('${s.img}')`; bg.style.opacity='1'; },300);
+  document.getElementById('heroTag').textContent='⚙ '+s.tag;
+  document.getElementById('heroTitle').innerHTML=s.title;
+  document.getElementById('heroDesc').textContent=s.desc;
+  document.querySelectorAll('.hero-dot').forEach((d,j)=>d.classList.toggle('active',j===i));
+  clearInterval(slideTimer);
+  slideTimer = setInterval(nextSlide, 5000);
+}
+function nextSlide() { setSlide((currentSlide+1)%slides.length); }
+slideTimer = setInterval(nextSlide, 5000);
+
+// ── VEHICLE TABS ──
+function switchVehicle(id, tab) {
+  document.querySelectorAll('.vtab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.vehicle-panel').forEach(p=>p.classList.remove('active'));
+  tab.classList.add('active');
+  const panel = document.getElementById('panel-'+id);
+  if(panel) panel.classList.add('active');
 }
 
-// Cart counter
-let cart = 0;
-document.querySelectorAll('.btn-cart').forEach(btn => {
-  btn.addEventListener('click', function() {
-    cart++;
-    this.textContent = '✓ Added!';
-    this.style.background = '#27ae60';
-    setTimeout(() => {
-      this.textContent = 'Add to Cart';
-      this.style.background = '';
-    }, 1200);
-  });
-});
-
-// Wishlist toggle
-document.querySelectorAll('.btn-wish').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const svg = this.querySelector('svg path');
-    if (svg) svg.style.fill = svg.style.fill === 'var(--amber)' ? 'none' : 'var(--amber)';
-    this.style.borderColor = this.style.borderColor === 'var(--amber)' ? 'rgba(255,255,255,0.1)' : 'var(--amber)';
-  });
+// ── CART ──
+document.addEventListener('click', function(e) {
+  if(e.target.classList.contains('btn-cart')) {
+    const orig = e.target.textContent;
+    e.target.textContent = '✓ Added!';
+    e.target.style.background = '#27ae60';
+    setTimeout(()=>{ e.target.textContent=orig; e.target.style.background=''; }, 1400);
+  }
+  if(e.target.classList.contains('btn-wish')) {
+    const svg = e.target.querySelector('path');
+    if(svg) { const filled = svg.style.fill==='rgb(232, 134, 26)'; svg.style.fill=filled?'none':'rgb(232,134,26)'; e.target.style.borderColor=filled?'':'var(--amber)'; }
+  }
 });
 </script>
 </body>
