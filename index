@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RELCO International – Military Vehicle Parts & Components</title>
+<title>RELCO - Raschid Enterprises – Military Vehicle Parts & Components</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -112,7 +112,7 @@
   .veh-parts-section { padding:10px 40px 60px; background:var(--navy2); }
   .parts-grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; max-width:1200px; margin:0 auto; }
 
-  /* NAPCO-style 6-card grid */
+  /* RELCO-style 6-card grid */
   .card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; padding:30px 40px 60px; max-width:1200px; margin:0 auto; }
   .card { position:relative; height:270px; overflow:hidden; cursor:pointer; display:flex; flex-direction:column; justify-content:flex-end; }
   .card-img { position:absolute; inset:0; background-size:cover; background-position:center; filter:saturate(0.25) brightness(0.45); transition:transform .5s ease, filter .4s; }
@@ -1026,10 +1026,10 @@
       <div class="brand-tag">International LLC</div>
       <p>Pakistan's specialist supplier for M-812, APC M113A2, Tatra T-813, and Praga V3S parts. Quality-certified components, ready inventory, fast dispatch since 1998.</p>
       <div class="footer-contact">
-        <p><strong>RELCO International LLC</strong></p>
-        <p>Plot 45, Industrial Zone, Lahore, Pakistan</p>
-        <p>Phone: +92 300 000 0000 · Fax: +92 300 000 0001</p>
-        <p>Email: info@relcointl.com</p>
+        <p><strong>Raschid Enterprises</strong></p>
+        <p>31/FF, Centre Point,  Main Boulevard,Gulberg-54660 , Lahore, Pakistan</p>
+        <p>Phone: +92 323 7989871· eMail: contact@raschident.com</p>
+        <p>WhatApp: +92 33 444 34560 </p>
       </div>
     </div>
     <div class="footer-col">
